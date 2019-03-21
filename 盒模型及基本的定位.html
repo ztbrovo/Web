@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>盒模型与定位</title>
+<style type="text/css">
+.div11{
+  width: 277px;
+  height: 103px;
+  background-color: red;
+  margin-bottom: 10px;
+  float: left;
+}
+/*我知道红块儿和绿条之间的间隔没了，但我看图片没给数据，就想着有没有不用自己算就可以做成像图片那样的方法呢*/
+.right1{
+  float: left;
+}
+.div12{
+  width: 137px;
+  height: 49px;
+  background-color: #7CFC00;
+  margin-bottom: 8px;
+  float: right;
+}
+.div13{
+  width: 679px;
+  height: 46px;
+  background-color: #7CFC00;
+  margin-bottom: 10px;
+  clear: right;
+}
+.div2{
+  clear: left;
+}
+  
+.div21{
+  width: 310px;
+  height: 435px;
+  background-color: orange;
+  margin-right: 10px;
+  float: left;
+}
+.center2{
+  float: left;
+}
+.div221{
+  width: 450px;
+  height: 240px;
+  background-color: #00BFFF;
+  margin-bottom: 10px;
+}
+.div222{
+  width: 450px;
+  height: 110px;
+  background-color: #00BFFF;
+  margin-bottom: 10px;
+}
+.div223{
+  width: 450px;
+  height: 30px;
+  background-color: #00BFFF;
+  margin-bottom: 10px;
+}
+.div23{
+  width: 190px;
+  height: 400px;
+  background-color: purple;
+  margin-left: 10px;
+  float: left;
+}
+.div24{
+  width: 650px;
+  height: 25px;
+  background-color: green;
+  margin-bottom: 10px;
+  float: left;
+}
+.div3{
+  width: 970px;
+  height: 35px;
+  background-color: #0000CD;
+  clear: left;
+}
+
+</style>
+</head>
+<body>
+  <div class="div1">
+    <div class="div11"></div>
+    <div class="right1">
+      <div class="div12"></div>
+      <div class="div13"></div>
+    </div>
+  </div>
+  <div class="div2">
+    <div class="div21"></div>
+    <div class="center2">
+      <div class="div221"></div>
+      <div class="div222"></div>
+      <div class="div223"></div>
+    </div>
+    <div class="div23"></div>
+    <div class="div24"></div>
+  </div>
+  <div class="div3">
+  </div>
+<!--没有用到absolute和relative等方式，让我很惶恐,肯定有些地方方法更简洁吧，我还不太懂布局，查了一下午资料才似懂非懂地做出来这个东西。辛苦老师看了，我自己看自己码的东西心情都非常复杂。。。-->
+  
+</body>
+</html>
