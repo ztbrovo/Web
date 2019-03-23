@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.topnav{
+    width: 100%;
+    height: 40px;
+    background-color: rgb(240, 239, 239);
+    line-height: 40px;/*用与height相同来垂直居中*/
+    font-size: 15px;
+    font-weight: lighter;
+    color: rgb(63, 63, 63);
+}
+.topnavleft{
+    float: left;
+    padding-left: 100px;
+}
+.topnavleft li{
+    float: left;
+    list-style: none;
+    padding-right: 15px;
+}
+.topnavright{
+    float: right;
+    padding-right: 50px;
+}
+.topnavright li{
+    float: left;
+    list-style: none;
+    padding-left: 30px;
+}
+.red{
+    color: red;
+}
+.black{
+    color: rgb(15, 15, 15);
+}
