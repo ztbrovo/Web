@@ -1,0 +1,89 @@
+.container{
+    background-color: #B8B8B8;
+    margin: 0px 100px;
+  }
+  .white{
+    background-color: white;
+    margin: 0px 30px;
+    text-align: center;
+    border-radius: 5px;/*对于border属性，css3提供了四个单独的属性，
+  
+  　　* border-top-left-radius：
+  
+  　　* border-top-right-radius
+  　　* border-bottom-right-radius
+  　　* border-bottom-left-radius
+    同时也支持左上，右上，右下,左下
+    border-radius: 5px 15px 30px 60px;
+    radius可向 div 元素添加圆角边框。
+  
+  　　border-radius 是一种缩写方法。如果“/”前后的值都存在，那么“/”前面的值设置其水平半径，“/”后面值设置其垂直半径。如果没有“/”，则水平和垂直半径相等。另外其四个值是按照top-left、top-right、bottom-right、bottom-left的顺序来设置的其主要会有下面几种情形出现：
+  
+  　　1、只有一个值，那么 top-left、top-right、bottom-right、bottom-left 四个值相等。
+  
+  　　2、有两个值，那么 top-left 等于 bottom-right，并且取第一个值；top-right 等于 bottom-left，并且取第二个值
+  
+  　　3、有三个值，其中第一个值是设置top-left;而第二个值是 top-right 和 bottom-left 并且他们会相等,第三个值是设置 bottom-right。
+  
+  　　4、有四个值，其中第一个值是设置 top-left 而第二个值是 top-right 第三个值 bottom-right 第四个值是设置 bottom-left。*/
+  }
+  .imgalt{
+    line-height: 20px;
+    font-size: 15px;
+    padding-bottom: 15px;
+  }
+  h1{
+    padding-top: 50px;
+    margin-bottom: -10px;/*控制元素上下移动*/
+    font-family: Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 60px;
+    text-align: center;
+  }
+  .header{
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 25px;
+    text-align: center;
+  }
+  .main{
+    padding-left: 200px;
+    padding-top: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 25px
+  }
+  ul{
+    margin: 0px 200px;
+    font-size: 15px;
+  }
+  blockquote{
+    margin: 0px 200px;
+    padding-top: 30px;
+    font-size: 22px;
+    font-weight: lighter;
+    line-height: 40px;
+  }
+  .cite{
+    margin-left: 200px;
+    font-style: oblique;
+    font-size: 15px;
+    color: grey;
+  }
+  .more{
+    margin-left: 200px;
+    margin-right: 150px;
+    font-size: 25px;
+    padding-bottom: 50px;
+  }
+   a:link{color: green;}
+   a:visited{color: blue;}
+   a:hover{color: red;}
+   a:active{color:black;}/*链接伪类*/
+  .footer{
+    text-align: center;
+    font-weight: lighter;
+    font-size: 15px;
+    margin-top: 30px;
+    }
+  
