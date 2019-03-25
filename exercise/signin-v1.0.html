@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signin</title>
+    <style>
+    *{margin: 0; padding: 0;}/*去掉页面样式*/
+    form{
+        width: 600px;
+        height: 300px;
+        margin: auto;
+        /*display: table;
+        display: table-cell;*/
+        text-align: center;
+        background-color: #fdd6dc;
+        /*background-position: center center;不知道为什么不能水平竖直居中*/
+    }
+    p{
+        padding-top: 40px;
+        padding-bottom: 10px;
+        font-size: 50px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+    .id{
+        width: 200px;
+        height: 30px;
+        color: #dddcdc;
+        text-align: center;
+    }
+    .psd{
+        width: 200px;
+        height: 30px;
+        color: #dddcdc;
+        text-align: center;
+    }
+    .submit{
+        font-family: monospace;
+        text-align: center;
+        word-spacing: 5px;
+        width: 70px;
+        height: 30px;
+        background-color: #ffe75e;
+        border-radius: 10px;
+    }
+    </style>
+</head>
+<body>
+    <!--举例<form action="demo-form.php">
+            <input type="text" name="fname" placeholder="First name"><br>
+            <input type="text" name="lname" placeholder="Last name"><br>
+            <input type="submit" value="提交">
+          </form>-->
+    <form action="demo-form.php">
+        <p>Welcome</p>
+        <input type="text" name="id" placeholder="请输入账号" class="id"><br><br>
+        <input type="text" name="id" placeholder="请输入密码" class="psd"><br><br>
+        <input type="submit" value="登 录" class="submit">
+    </form>
+    <!--1.welcome不在form中，所以应该单独出来，用h1比较合适；
+        2.账号的name是userid,密码的name是pw,type是password；提交按钮用button，内容可直接在<button>和</button>中间写
+        3.input无结束标签；
+        4.form外建立容器，容器1是背景，容器2是主要内容，方便定位等-->
+    
+</body>
+</html>
