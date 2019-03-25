@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面布局3</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .header{
+        background-color: yellow;
+        height: 100px;
+        width: 100%;
+        font-size: 80px;
+        font-family: "楷体";
+    }
+    .main{
+        width: 80%;
+        margin: 0 auto;
+        height: 100px;
+    }
+    .left{
+        background-color: brown;
+        float: left;
+        width: 20%;
+        font-size: 60px;
+        color: yellow;
+        height: 100px;
+    }
+    .right{
+        background-color: peachpuff;
+        width: 80%;/*注意父元素与子元素的宽度关系*/
+        float: right;
+        font-size: 60px;
+        color: blue;
+        height: 100px;
+    }
+    .ad{
+        width: 100%;
+        }
+    .ad1{
+        width: 10%;
+        height: 800px;
+        background-color: blue;
+        font-size: 40px;
+        float: left;
+
+    }
+    .main1{
+        margin: 0 auto;
+        background-color: yellow;
+        text-align: center;
+        font-size: 60px;
+        width: 80%;
+        height: 600px;
+        float: left;
+    }
+    .ad2{
+        width: 10%;
+        height: 800px;
+        background-color: blue;
+        font-size: 40px;
+        float: right;/*关于float的使用*/
+    }
+
+    .foot{
+        background-color: white;
+        width: 80%;
+        margin: 0 auto;
+        height: 200px;
+        text-align: center;
+        font-size: 60px;
+    }
+    
+    
+    </style>
+    
+</head>
+
+<body>
+    <div>
+        <div class="header">页面头部信息</div>
+        <div class="main">
+            <div class="left">LOGO</div>
+            <div class="right">页面导航</div>
+        </div>
+        <div class="ad">
+            <div class="ad1">广告投放</div>
+            <div class="main1">页面的主要内容</div>
+            <div class="ad2">广告投放</div>
+            <div class="foot">页面的版权信息</div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
