@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
 }
+body{
+    background-color: rgb(240, 239, 239);
+}
 .topnav{
     width: 100%;
     height: 40px;
@@ -35,3 +38,162 @@
 .black{
     color: rgb(15, 15, 15);
 }
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+}
+
+.taobaologo{
+    width: 10%;
+    height: 60px;
+    float: left;
+    border: 0;
+    margin-left: 5%;
+}
+.row{
+    width: 80%;/*在此利用计算比例没有使用再建一个div来使其居中，但高度好像改不了*/
+    margin: 0 auto;
+    text-align: center;
+    /*background-color: black;用颜色观察一下页面的情况*/
+    padding-top: 10px;/*注意盒子的关系，移动边框时是作为大盒子里的小盒子一共，所以用大盒子的padding*/
+}
+.border{
+    border: 1px rgb(253, 114, 21) solid;
+    width: 50%;
+    height: 40px;
+    margin: 0 auto;
+    /*background-color: blue;*/
+    border-radius: 20px;/*边框变形一半的高度两侧椭圆*/
+}
+.select{
+    border: 0;
+    width: 15%;
+    height:38px;
+    background-color: rgb(216, 215, 215);
+    font-size: 15px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    float: left;
+    padding-left: 15px;
+}
+input{
+    border: 0;
+    width: 70%;
+    height: 38px;
+    float: left;
+}
+button{
+    border: 0;
+    width: 15%;
+    height: 38px;
+    float: left;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(253, 100, 45);
+    font-size: 20px;
+    text-align: center;
+    color: white;
+
+}
+.container{
+    width: 90%;
+    background-color: white;
+    margin: 0 auto;
+}
+.container1{
+    width: 90%;
+    background-color: white;
+    float: left;
+}
+h1{
+    height: 40px;
+    font-size: 25px;
+    line-height: 40px;
+    color: rgb(247, 36, 36);
+    padding-bottom: 10px;
+}
+.small{
+    color: gray;
+    font-size: 12px;
+    word-spacing: 5px;
+    padding-bottom: 10px;
+}
+.ad{
+    color: rgb(194, 194, 194);
+    border: 1px solid rgb(194, 194, 194);
+    font-size: 12px;
+    border-radius: 5px;
+    float: right;
+    margin-right: 5px;
+}
+.item{
+    width: 100%;
+}
+*{box-sizing: border-box;}/*图片水平排列，
+最基本的一点要设置盒子模型为border-box，这样能保证每一个img的宽度计算方式为content+padding+border,
+就算设置padding和border也不影响总宽度。以后要更改间距，只要更改border-width即可。*/
+.item img{
+    width: 20%;
+    border: 1px solid rgb(194, 194, 194);
+    height: 300px;
+    float: left;
+
+}
+img:hover{
+    border-color: orangered;
+}
+.rightsidebar{
+    list-style: none;
+    background-color: white;
+    width: 5%;
+    margin-left: 5px;
+    float: left;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.rightsidebar li{
+    border-bottom: 1px rgb(228, 227, 227) solid;
+    padding: 10px;
+}
+.one{
+    color: orangered;
+}
+.two{
+    color: rgb(241, 72, 129);
+}
+.three{
+    color: rgb(66, 66, 245);
+}
+.four{
+    color: greenyellow;
+}
+.five{
+    color: red;
+}
+.one:hover{
+    background-color: rgb(253, 100, 45);
+    color: white;
+}
+.two:hover{
+    background-color: rgb(253, 100, 45);
+    color: white;
+}
+.three:hover{
+    background-color: rgb(253, 100, 45);
+    color: white;
+}
+.four:hover{
+    background-color: rgb(253, 100, 45);
+    color: white;
+}
+.five:hover{
+    background-color: rgb(253, 100, 45);
+    color: white;
+}
+
+
+
+
+
