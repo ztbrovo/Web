@@ -42,90 +42,126 @@ body{
     width: 100%;
     height: 60px;
     background-color: rgb(255, 255, 255);
+    overflow: hidden;
 }
 
 .taobaologo{
-    width: 10%;
-    height: 60px;
+    height: 80px;/*一般来说图片只设置宽或者高即可*/
     float: left;
     border: 0;
-    margin-left: 5%;
-}
-.row{
-    width: 80%;/*在此利用计算比例没有使用再建一个div来使其居中，但高度好像改不了*/
-    margin: 0 auto;
-    text-align: center;
-    /*background-color: black;用颜色观察一下页面的情况*/
-    padding-top: 10px;/*注意盒子的关系，移动边框时是作为大盒子里的小盒子一共，所以用大盒子的padding*/
+    margin-left: 1%;
+    margin-top: -12px;
 }
 .border{
-    border: 1px rgb(253, 114, 21) solid;
+    border: 2px rgb(253, 114, 21) solid;
     width: 50%;
     height: 40px;
-    margin: 0 auto;
+    margin: 10px auto auto auto;
     /*background-color: blue;*/
     border-radius: 20px;/*边框变形一半的高度两侧椭圆*/
 }
 .select{
     border: 0;
-    width: 15%;
-    height:38px;
+    width: 10%;
+    height: 36px;
     background-color: rgb(216, 215, 215);
     font-size: 15px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     float: left;
     padding-left: 15px;
+    margin-left: 1px;
+}
+label{
+    z-index: 2;
+    position: absolute;
+    left: 31%;
+    margin-left: 2%;
+    color: #b2b2b2;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+.search{
+    position: absolute;
+    left: 31%;
+    width: 22px;
+    height: 22px;
+    margin-top: 8px;
 }
 input{
     border: 0;
-    width: 70%;
-    height: 38px;
+    width: 80%;
+    height: 36px;
     float: left;
+}
+.camera{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 67%;
+    margin-top: 4px;
 }
 button{
     border: 0;
-    width: 15%;
-    height: 38px;
-    float: left;
+    width: 10%;
+    height: 36px;
+    float: right;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: rgb(253, 100, 45);
     font-size: 20px;
     text-align: center;
     color: white;
-
+    margin-left: -1px;
 }
 .container{
-    width: 90%;
+    width: 96%;
     background-color: white;
-    margin: 0 auto;
+    margin: 10px auto auto auto;
 }
 .container1{
-    width: 90%;
+    width: 94%;
     background-color: white;
     float: left;
 }
-h1{
+.title{
     height: 40px;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 40px;
     color: rgb(247, 36, 36);
-    padding-bottom: 10px;
+    margin: 15px auto 15px 10px;
+    font-weight: bold;
+}
+.linelogo{
+    width: 6px;
+    height: 16px;
+    border: 1px solid rgb(214, 59, 2);
+    background-color: rgb(214, 59, 2);
+    display: inline-block;
+    margin-right: 5px;
 }
 .small{
+    margin-bottom: 15px;
+}
+.small a{
     color: gray;
     font-size: 12px;
-    word-spacing: 5px;
-    padding-bottom: 10px;
+    word-spacing: 10px;
+    padding-left: 10px;
+    text-decoration: none;
 }
 .ad{
     color: rgb(194, 194, 194);
     border: 1px solid rgb(194, 194, 194);
-    font-size: 12px;
-    border-radius: 5px;
+    width: 36px;
+    height: 18px;
+    font-size: 10px;
+    border-radius: 10px;
     float: right;
-    margin-right: 5px;
+    margin: 4px 10px 0 0;
+    text-align: center;
+    line-height: 18px;
 }
 .item{
     width: 100%;
@@ -133,29 +169,379 @@ h1{
 *{box-sizing: border-box;}/*图片水平排列，
 最基本的一点要设置盒子模型为border-box，这样能保证每一个img的宽度计算方式为content+padding+border,
 就算设置padding和border也不影响总宽度。以后要更改间距，只要更改border-width即可。*/
-.item img{
+.item1{
     width: 20%;
-    border: 1px solid rgb(194, 194, 194);
-    height: 300px;
+    height: 430px;
+    border: 1px solid rgb(240, 239, 239);
+    padding: 20px 24px 10px 24px;
     float: left;
+}
+.item1 img{
+    height: 250px;
+    margin-bottom: 5px;
+}
+.item1 .name{
+    font-size: 15px;
+    color: rgb(65, 65, 65);
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+}
+.item1 .number{
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+.item1 .number a{
+    font-size: 10px;
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+.item1 .price{
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    display: block;
+}
+.item1 .price .now{
+    color: rgb(253, 100, 45);
+    text-decoration: none;
+}
+.item1 .price .now span{
+    cursor: pointer;/*光标呈现为指示链接的指针（一只手）*/
+    font-size: 10px;
+}
+.item1 .price .now em{
+    font-size: 30px;
+    font-style: normal;
+}
+.item1 .price .before{
+    color: gray;
+    text-decoration: line-through;
+    cursor: pointer;
+    font-size: 10px;
+}
+.item1 .price .sale{
+    cursor: pointer;
+    text-decoration: none;
+    color: gray;
+    float: right;
+    display: block;
+    margin-top: 3px;/*!!!!!!!!!!字体大小不一致时如何使浮动的字体与其他字体底线一致：只需移动上下距离。。*/
+}
+.item2{
+    width: 20%;
+    height: 430px;
+    border: 1px solid rgb(240, 239, 239);
+    padding: 20px 24px 10px 24px;
+    float: left;
+}
+.item2 img{
+    height: 250px;
+    margin-bottom: 5px;
+}
 
-}
-img:hover{
-    border-color: orangered;
-}
-.rightsidebar{
-    list-style: none;
-    background-color: white;
-    width: 5%;
-    margin-left: 5px;
+.item2 .name .baoyou{
+    font-size: 10px;
+    width: 38px;
+    height: 22px;
+    background-color: rgb(114, 168, 31);
+    color: white;
     float: left;
-    border-radius: 10px;
-    font-size: 18px;
+    border-radius: 7px;
+    padding-top: 1px;
     text-align: center;
 }
-.rightsidebar li{
+.item2 .name{
+    font-size: 15px;
+    color: rgb(65, 65, 65);
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.item2 .number{
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+.item2 .number a{
+    font-size: 10px;
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+.item2 .price{
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    display: block;
+}
+.item2 .price .now{
+    color: rgb(253, 100, 45);
+    text-decoration: none;
+}
+.item2 .price .now span{
+    cursor: pointer;
+    font-size: 10px;
+}
+.item2 .price .now em{
+    font-size: 30px;
+    font-style: normal;
+}
+.item2 .price .before{
+    color: gray;
+    text-decoration: line-through;
+    cursor: pointer;
+    font-size: 10px;
+}
+.item2 .price .sale{
+    cursor: pointer;
+    text-decoration: none;
+    color: gray;
+    float: right;
+    display: block;
+    margin-top: 3px;
+}
+.item3{
+    width: 20%;
+    height: 430px;
+    border: 1px solid rgb(240, 239, 239);
+    padding: 20px 24px 10px 24px;
+    float: left;
+}
+.item3 img{
+    height: 250px;
+    margin-bottom: 5px;
+}
+.item3 .name{
+    font-size: 15px;
+    color: rgb(65, 65, 65);
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+}
+.item3 .number{
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+.item3 .number a{
+    font-size: 10px;
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+.item3 .price{
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    display: block;
+}
+.item3 .price .now{
+    color: rgb(253, 100, 45);
+    text-decoration: none;
+}
+.item3 .price .now span{
+    cursor: pointer;
+    font-size: 10px;
+}
+.item3 .price .now em{
+    font-size: 30px;
+    font-style: normal;
+}
+.item3 .price .before{
+    color: gray;
+    text-decoration: line-through;
+    cursor: pointer;
+    font-size: 10px;
+}
+.item3 .price .sale{
+    cursor: pointer;
+    text-decoration: none;
+    color: gray;
+    float: right;
+    display: block;
+    margin-top: 3px;
+}
+.item4{
+    width: 20%;
+    height: 430px;
+    border: 1px solid rgb(240, 239, 239);
+    padding: 20px 24px 10px 24px;
+    float: left;
+}
+.item4 img{
+    height: 250px;
+    margin-bottom: 5px;
+}
+.item4 .name{
+    font-size: 15px;
+    color: rgb(65, 65, 65);
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+}
+.item4 .number{
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+.item4 .number a{
+    font-size: 10px;
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+.item4 .price{
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    display: block;
+}
+.item4 .price .now{
+    color: rgb(253, 100, 45);
+    text-decoration: none;
+}
+.item4 .price .now span{
+    cursor: pointer;
+    font-size: 10px;
+}
+.item4 .price .now em{
+    font-size: 30px;
+    font-style: normal;
+}
+.item4 .price .before{
+    color: gray;
+    text-decoration: line-through;
+    cursor: pointer;
+    font-size: 10px;
+}
+.item4 .price .sale{
+    cursor: pointer;
+    text-decoration: none;
+    color: gray;
+    float: right;
+    display: block;
+    margin-top: 3px;
+}
+.item5{
+    width: 20%;
+    height: 430px;
+    border: 1px solid rgb(240, 239, 239);
+    padding: 20px 24px 10px 24px;
+    float: left;
+}
+.item5 img{
+    height: 250px;
+    margin-bottom: 5px;
+}
+.item5 .name .baoyou{
+    font-size: 10px;
+    width: 38px;
+    height: 22px;
+    background-color: rgb(114, 168, 31);
+    color: white;
+    float: left;
+    border-radius: 7px;
+    padding-top: 1px;
+    text-align: center;
+}
+.item5 .name{
+    font-size: 15px;
+    color: rgb(65, 65, 65);
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.item5 .number{
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+.item5 .number a{
+    font-size: 10px;
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+.item5 .price{
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    display: block;
+}
+.item5 .price .now{
+    color: rgb(253, 100, 45);
+    text-decoration: none;
+}
+.item5 .price .now span{
+    cursor: pointer;
+    font-size: 10px;
+}
+.item5 .price .now em{
+    font-size: 30px;
+    font-style: normal;
+}
+.item5 .price .before{
+    color: gray;
+    text-decoration: line-through;
+    cursor: pointer;
+    font-size: 10px;
+}
+.item5 .price .sale{
+    cursor: pointer;
+    text-decoration: none;
+    color: gray;
+    float: right;
+    display: block;
+    margin-top: 3px;
+}
+.item1:hover{
+    border-color: orangered;
+}
+.item2:hover{
+    border-color: orangered;
+}
+.item3:hover{
+    border-color: orangered;
+}
+.item4:hover{
+    border-color: orangered;
+}
+.item5:hover{
+    border-color: orangered;
+}
+
+.rightsidebar{
+    width: 4%;
+    transition: none;
+    float: left;
+    font-size: 18px;
+    text-align: center;
+    position: fixed;
+    top: 100px;
+    left: 92.3%;
+}
+.rightsidebar .half{
+    margin-left: 10px;
+    width: 40px;
+    height: 19px;
+    overflow: hidden;
+}
+.rightsidebar .wangwang{
+    width: 40px;
+    height: 40px;
+    
+}
+.rightsidebar .col{
+    margin-top: 0;
+    background-color: white;
+    border-radius: 10px;  
+    height: 520px;
+}
+.rightsidebar a{
     border-bottom: 1px rgb(228, 227, 227) solid;
     padding: 10px;
+    display: block;
+    text-decoration: none;
 }
 .one{
     color: orangered;
@@ -172,25 +558,62 @@ img:hover{
 .five{
     color: red;
 }
+.six{
+    color: black;
+}
+.seven{
+    color: black;
+}
+.eight{
+    color: black;
+}
 .one:hover{
     background-color: rgb(253, 100, 45);
     color: white;
+    transition: all .2s;/*过渡效果变大*/
+    font-weight: bold;
 }
 .two:hover{
     background-color: rgb(253, 100, 45);
     color: white;
+    transition: all .2s;
+    font-weight: bold;
 }
 .three:hover{
     background-color: rgb(253, 100, 45);
     color: white;
+    transition: all .2s;
+    font-weight: bold;
 }
 .four:hover{
     background-color: rgb(253, 100, 45);
     color: white;
+    transition: all .2s;
+    font-weight: bold;
 }
 .five:hover{
     background-color: rgb(253, 100, 45);
     color: white;
+    transition: all .2s;
+    font-weight: bold;
+}
+.six:hover{
+    background-color: rgb(253, 100, 45);
+    color: white;
+    transition: all .2s;
+    font-weight: bold;
+}
+.seven:hover{
+    background-color: rgb(253, 100, 45);
+    color: white;
+    transition: all .2s;
+    font-weight: bold;
+}
+.eight:hover{
+    background-color: rgb(253, 100, 45);
+    color: white;
+    transition: all .2s;
+    font-weight: bold;
 }
 
 
