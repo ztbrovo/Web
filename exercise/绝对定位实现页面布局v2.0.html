@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位实现页面布局</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        color: #333;
+        font-family: Verdana, Geneva, Tahoma, sans-serif,"宋体";/*设置字体很重要*/
+        list-style: none;/*去掉标签的圆点*/
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    #wrap{
+        width: 60%;
+        margin: 0 auto;
+        padding: 0 10px 10px;/*上0，左右10，下10*/
+        border-left: 1px solid yellow;
+        border-right: 1px solid yellow;
+    }
+    h1{
+        font-size: 30px;
+        background-color: pink;
+        width: 100%;
+        height: 88px;
+        text-align: left;
+        text-indent: 30px;/*控制首行缩进*/
+        line-height: 80px;
+        font-family: "宋体";
+    }
+    .nav{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .nav li{
+        float: left;/*设置浮动使字体聚在同行*/
+        margin: 0 32px;
+    }
+    .nav li a{
+        font-size: 20px;
+        text-decoration: none;
+        padding-bottom: 2px;
+        display: block;
+    }
+    .nav li a:hover{
+        text-decoration: none;
+        border-bottom: 3px red solid;
+    }
+    .nav li .current{
+        border-bottom: 3px red solid;
+    }
+    .nav li .current a:hover{
+        border-bottom: none;
+    }
+    #mainbody{
+        width: 100%;
+        position: relative;
+        margin-top: 60px;
+    }
+    .sidebar{
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    .sidebar dl{
+        padding: 0 0 5px;
+    }
+    .sidebar dt{
+        background-color: purple;
+        font-size: 24px;
+        font-family: "宋体";
+        font-weight: bold;
+        width: 180px;
+        line-height: 26px;/*line-height也可以用来改变行与行之间的距离*/
+        padding: 5px 0 5px 15px;
+        margin-bottom: 15px;
+    }
+    .sidebar dd{
+        font-size: 10px;
+        font-family: "宋体";
+        line-height: 20px;
+        padding-left: 12px;
+    }
+    .sidebar dd .current a{
+        color: red;
+    }
+    #content{
+        margin-left: 200px;
+        position: absolute;
+        top: 0;
+        width: 70%;/*控制伸缩性，页面更加优化*/
+    }
+    #content h1{
+        background-color: white;
+        font-size: 24px;
+        font-family: "宋体";
+        font-weight: bold;
+        margin: -23px auto;
+    }
+    #content h3{
+        font-family: "宋体";
+        font-size: 12px;
+        margin: 10px auto 10px 0;
+    }
+    #content dl{
+        margin-bottom: 10px;
+    }
+    #content dt{
+        line-height: 26px;
+        font-weight: bold;
+    }
+    #content dd{
+        line-height: 22px;
+    }
+    .learn a{
+        text-decoration: underline;
+        color: blue;
+        padding-bottom: 2px;
+        font-size: 16px;
+    }
+    .learn a:hover{
+        text-decoration: none;
+    }
+    .row{
+        border-top:1px solid gray;
+        border-bottom: 3px solid gray;
+        margin: 5px auto;
+        padding: 15px 0;
+    }
+    .row a{
+        margin-left: 20px;
+        border: 2px gray solid;
+        padding: 5px 20px;
+        background-color: #f3f3f3;
+        font-size: 12px;
+        color: #555;
+    }
+    .row a:hover{
+        text-decoration: none;
+        color: #000;
+    }
+    .tips{
+        color: gray;
+        margin-top: 20px;
+    }
+    .disline{
+        border-bottom: 2px solid gray;
+        margin-top: 10px;
+        line-height: 26px;
+    }
+    #footer{
+        text-align: center;
+        background-color: #ddd;
+        width: 100%;
+        height: 40px;
+        padding: 15px 0;
+        margin-top: 15px;
+    }
+</style>
+</head>
+<body>
+    <div id="wrap"><!--wrap意思是覆盖，包裹-->
+        <div id="header">
+            <div>
+                <h1>前端开发教程</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="current"><a href="#">CSS</a></li>
+                    <li><a href="#">HTML</a></li>                     
+                    <li><a href="#">Javascript</a></li>
+                    <li><a href="#">Ajax</a></li>
+                    <li><a href="#">jQuery</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mainbody">
+            <div class="sidebar"><!--自定义列表的开始使用<dl>标签definition list,列表中每个元素的标题使用<dt>(definition term)定义,后面跟随<dd>(definition description)用于描述列表中元素的内容. -->
+                <dl>
+                    <dt>CSS 基础教程</dt>
+                     <dd class="current"><a href="#">CSS 简介</a></dd>
+                     <dd><a href="#">CSS 基础语法</a></dd>
+                     <dd><a href="#">CSS 高级语法</a></dd>
+                     <dd><a href="#">CSS 派生选择器</a></dd>
+                     <dd><a href="#">CSS id 选择器</a></dd>
+                     <dd><a href="#">CSS 类选择器</a></dd>    
+                     <dd><a href="#">CSS 属性选择器</a></dd>    
+                     <dd><a href="#">CSS 创建</a></dd>
+                </dl>
+                <dl>
+                    <dt>CSS 盒子模型</dt>
+                    <dd><a href="#">CSS 盒子模型概述</a></dd>
+                    <dd><a href="#">CSS 内边距</a></dd>
+                    <dd><a href="#">CSS 边框</a></dd>
+                    <dd><a href="#">CSS 外边距</a></dd>
+                    <dd><a href="#">CSS 外边距合并</a></dd>
+                </dl>
+                <dl>
+                    <dt>CSS 定位</dt>
+                    <dd><a href="#">CSS 定位概述</a></dd>
+                    <dd><a href="#">CSS 相对定位</a></dd>
+                    <dd><a href="#">CSS 绝对定位</a></dd>
+                    <dd><a href="#">CSS 浮动</a></dd>
+                </dl>
+                <dl>
+                    <dt>CSS 选择器</dt>
+                    <dd><a href="#">CSS 元素选择器</a></dd>
+                    <dd><a href="#">CSS 选择器分组</a></dd>
+                    <dd><a href="#">CSS 类选择器详解</a></dd>
+                    <dd><a href="#">CSS ID 选择器详解</a></dd>
+                    <dd><a href="#">CSS 属性选择器详解</a></dd>
+                    <dd><a href="#">CSS 后代选择器</a></dd>
+                    <dd><a href="#">CSS 子元素选择器</a></dd>
+                    <dd><a href="#">CSS 相邻兄弟选择器</a></dd>
+                    <dd><a href="#">CSS 伪类</a></dd>
+                    <dd><a href="#">CSS 伪元素</a></dd>
+                </dl>
+                <dl>
+                    <dt>CSS 高级</dt>
+                    <dd><a href="#">CSS 对齐</a></dd>
+                    <dd><a href="#">CSS 尺寸</a></dd>
+                    <dd><a href="#">CSS 分类</a></dd>
+                    <dd><a href="#">CSS 导航栏</a></dd>
+                    <dd><a href="#">CSS 图片库</a></dd>
+                    <dd><a href="#">CSS 图片透明</a></dd>
+                    <dd><a href="#">CSS 媒介类型</a></dd>
+                    <dd><a href="#">CSS 注意事项</a></dd>
+                    <dd><a href="#">CSS 总结</a></dd>
+                </dl>
+            </div>
+            <div id="content">
+                <h1>CSS简介</h1>
+                <div class="row"><a href="#">上一章</a><a href="#">下一章</a></div>
+                <div class="disline">
+                    <h3>你应该知道这些知识</h3>
+                    <p>在继续学习之前，你应该有以下基本认识</p>
+                    <p>&middot; HTML/XHTML</p>
+                    <p class="learn">如果您希望首先学习这些项目，我们的<a href="#">主页</a>上可以找到教程</p>
+                </div>
+                <div class="disline">
+                    <h3>什么是CSS？</h3>
+                    <p>CSS即级联样式表。 它是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。</p>
+                </div>
+                <div class="disline">
+                    <h3>基本信息</h3>
+                    <p>CSS目前最新版本为CSS3，是能够真正做到网页表现与内容分离的一种样式设计语言。相对于传统HTML的表现而言，CSS能够对网页中的对象的位置排版进行像素级的精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力，并能够进行初步交互设计，是目前基于文本展示最优秀的表现设计语言。CSS能够根据不同使用者的理解能力，简化或者优化写法，针对各类人群，有较强的易读性。</p>
+                </div>
+                <div>
+                    <h3>发展历史</h3>
+                    <dl>
+                    <dt>CSS1</dt>
+                    <dd>作为一项W3C推荐，CSS1发布于 1996年12月17 日。1999 年1月11日，此推荐被重新修订。</dd>
+                    </dl>
+                    <dl>
+                    <dt>CSS2</dt>
+                    <dd>作为一项 W3C 推荐，CSS2发布于 1999年1月11日。CSS2添加了对媒介（打印机和听觉设备）和可下载字体的支持。</dd>
+                    </dl>
+                    <dl>
+                    <dt>CSS3</dt>
+                    <dd>CSS3 计划将 CSS 划分为更小的模块</dd>
+                    </dl>
+                </div>
+                <p class="learn"><a href="#">亲自体验一下</a></p>
+                <div class="row"><a href="#">上一章</a> <a href="#">下一章</a></div>
+                <p class="tips">本站提供的内容仅用于学习培训。我们不保证内容的正确性。通过使用本站内容随之而来的风险与本站无关。</p>
+            </div>
+        </div>
+        <div id="footer">
+        柠檬学院&copy;版权所有
+        </div>
+    </div>
+</body>
+</html>

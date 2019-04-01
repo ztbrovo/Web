@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>杜鹃简介</title>
+    <style type="text/css">
+    *{
+        margin: 0; padding: 0;
+    }
+    #header{/*id用#*/
+    background-color: brown;
+    margin: 0 auto;
+    width: 760px;
+    height: 90px;
+    text-align: right;/*只是文字靠右的话可以用这个*/
+    }
+    #header a{
+        text-decoration: none;/*删除下划线*/
+        color: white;
+        font-family: "宋体";
+        font-size: 10px;
+        margin: 0 5px;/*间距*/
+    }
+    #header a:hover{
+        text-decoration: underline;/*比较新，之前没用过。鼠标落下显示下划线*/
+    }
+    .container{/*设置整体居中显示*/
+    margin: 0 auto;
+    width: 760px;
+    border: 3px solid rgb(95, 25, 25);
+    }
+    .juan{
+        background: url(images/image5.jpg) no-repeat;
+        /*背景插图片,transform: rotateY(180deg)是以y轴镜像反转，即水平翻转*/
+    }
+    .du{
+        background-color: rgb(235, 148, 148);
+        width: 760px;
+        height: 400px;
+        border: 1px solid rgb(235, 148, 148);
+        font-family: "楷体";
+        font-size: 16px;
+    }
+    h2{
+        margin: 40px 90px 10px auto;
+        font-size: 20px;
+        font-family: "宋体";
+        text-align: right;
+    }
+    p{
+        text-indent: 26px;/*段落中首行文本的缩进*/
+    }
+    img{
+        border: 1px solid rgb(235, 148, 148);
+        width: 30%;
+        height: 300px;
+        margin: 10px;
+    }
+    .con{
+        background: url(images/image4.jpg);/*class里有两个值，分别有不同的风格*/
+    }
+    .image{
+        background-color: rgb(235, 148, 148);
+        width: 760px;
+    }
+    .footer{
+        text-align: center;
+        background-color: rgb(150, 61, 61);
+        width: 760px;
+        height: 30px;
+        font-size: 13px;
+        font-family: "宋体";
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <a href="#">联系我们</a>
+            <a href="#">站点地图</a>        
+        </div>
+        <div class="du juan">
+            <h2>:: 关于杜鹃 ::</h2>
+            <p>杜鹃，签约于国际顶级模特经纪公司IMG，与众多一线时尚摄影师频繁合作，成为首位登上法国版《Vogue》封面的亚洲模特，更登上《时代》杂志封面；杜鹃 是整个2006年国际T台上最炙手可热的模特之一，杜鹃在2006年春季巴黎高级定制女装秀上为LV、YSL、Chanel、Valentino、Givenchy等世界顶级品牌走秀，在2006米兰•巴黎时装周上连走43个秀场；更成为LV、YSL、施华洛世奇 等五大品牌全球广告代言人，对一个仅仅踏入国际时尚圈一年的新人模特而言，杜鹃 几乎就像神话一样。</p>
+            <p>比较之前走向国际时装周的中国最有名的模特吕燕，鼎盛时期的工作量也不及杜鹃的1/3，更别说杜鹃代言如此之多的世界顶级品牌。国际上将“超模”的标准分为三部分：大牌走秀的经历、品牌广告代言的数量与质量、在时尚媒体的曝光率。杜鹃绝对当得起“中国国际化超模第一名”的称号。</p>
+            <p>杜鹃身高1.79米，却没有咄咄逼人的感觉。她像只小白兔，安静、纤弱，好像随时能把自己变成一个没有重量、可以在飞来飞去的时候装进口袋的物件。杜鹃说自己天生喜静，又或者是学过9年芭蕾舞的原因，塑造出杜鹃无与伦比的特殊气质，令西方和东方的观众同时喜欢，杜鹃许是第一人了！</p>
+            <p>杜鹃的出现有很好的机遇：伴随《VOGUE》中国版的面世、顶级奢侈品的涌入、上海成为时尚之都……中国时尚的氛围在多年的积蓄后，爆发了。而跻身国际的首位中国超模身份就幸运地落在了杜鹃身上。首先，杜鹃有传统的东方美态；第二，杜鹃知性、纤细的风格，符合世界审美惯例，不管在美国、欧洲、日本和中国，杜鹃都是公认的美丽嘉人。</p>
+            <p>2012年，杜鹃主演了陈可辛执导的影片《中国先生》，这是她首次触电。</p>
+        </div>
+        <div class="con image">
+            <img src="images/image1.jpg" alt="照片">
+            <img src="images/image2.jpg" alt="照片">
+            <img src="images/image3.jpg" alt="照片">
+        </div>
+        <div class="footer">
+            copyright © 2004-2012 zhangting.com All Rights Reserved.
+        </div>
+    </div>
+</body>
+</html>
