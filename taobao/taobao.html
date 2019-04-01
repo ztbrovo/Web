@@ -4,187 +4,273 @@
     <meta charset="UTF-8">
     <title>taobao</title>
     <link href="taobao.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="iconfont/iconfont.css"/><!--使用iconfont的方法-->
 </head>
 <body>
-    <div class="topnav">
-        <ul class="topnavleft">
-        <li class="black">中国大陆</li>
-        <li class="red">亲，请登录</li>
-        <li>免费注册</li>
-        <li>手机逛淘宝</li>
+<div class="cover">
+    <div class="site-nav"><!--元素是放在框中的，布局时看有几个框-->
+        <div class="site-nav-bd">
+        <ul class="site-nav-bd-l">
+        <li class="site-nav-menu">
+            <div class="site-nav-menu-hd">
+                <span class="site-nav-region">中国大陆</span>
+                <span class="site-nav-arrow">
+                    <span class="site-nav-icon iconfont icon-tubiaozhizuo-"></span>
+                </span>
+            </div>
+        </li>
+        <li class="site-nav-menu">
+            <div class="site-nav-menu-hd">
+                <div class="site-nav-sign">
+                <a href="#" class="h">亲，请登录</a>
+                <a href="#">免费注册</a>
+                </div>
+            </div>
+        </li>
+        <li class="site-nav-menu">
+            <div class="site-nav-menu-hd">
+                <a href="#">手机逛淘宝</a>
+            </div>
+        </li>
         </ul>
-        <ul class="topnavright">
-            <li>我的淘宝</li>
-            <li>购物车</li>
-            <li>收藏夹</li>
-            <li>商品分类</li>
-            <li>千牛卖家中心</li>
-            <li>联系客服</li>
-            <li>网站导航</li>
+        <ul class="site-nav-bd-r">
+            <li class="site-nav-menu">
+                <div class="site-nav-menu-hd">
+                    <a href="#">
+                        <span>我的淘宝</span>
+                    </a>
+                    <span class="site-nav-arrow">
+                        <span class="site-nav-icon iconfont icon-tubiaozhizuo-"></span>
+                    </span>
+                </div>
+            </li>
+            <li class="site-nav-menu">
+                <div class="site-nav-menu-hd">
+                    <a href="#">
+                        <span class="site-nav-icon iconfont icon-cart"></span>
+                        <span>购物车</span>
+                    </a>
+                    <span class="site-nav-arrow">
+                        <span class="site-nav-icon iconfont icon-tubiaozhizuo-"></span>
+                    </span>
+                </div>
+            </li>
+            <li class="site-nav-menu">
+                <div class="site-nav-menu-hd">
+                    <a href="#">
+                        <span class="site-nav-icon iconfont icon-star"></span>
+                        <span>收藏夹</span>
+                    </a>
+                    <span class="site-nav-arrow">
+                        <span class="site-nav-icon iconfont icon-tubiaozhizuo-"></span>
+                    </span>
+                </div>
+            </li>
+            <li class="site-nav-menu">
+                <div class="site-nav-menu-hd">
+                   <a href="#"><span>商品分类</span></a>
+                </div>
+            </li>
+            <li class="site-nav-pipe">|</li><!--分隔线的表示方法-->
+            <li class="site-nav-menu">
+                <div class="site-nav-menu-hd">
+                    <a href="#">
+                        <span>千牛卖家中心</span>
+                    </a>
+                    <span class="site-nav-arrow">
+                        <span class="site-nav-icon iconfont icon-tubiaozhizuo-"></span>
+                    </span>
+                </div>
+            </li>
+            <li class="site-nav-menu">
+                    <div class="site-nav-menu-hd">
+                        <a href="#">
+                            <span>联系客服</span>
+                        </a>
+                        <span class="site-nav-arrow">
+                            <span class="site-nav-icon iconfont icon-tubiaozhizuo-"></span>
+                        </span>
+                    </div>
+            </li>
+            <li class="site-nav-menu">
+                <div class="site-nav-menu-hd">
+                    <a href="#">
+                        <span class="site-nav-icon iconfont icon-list"></span>
+                        <span>网站导航</span>
+                    </a>
+                    <span class="site-nav-arrow">
+                        <span class="site-nav-icon iconfont icon-tubiaozhizuo-"></span>
+                    </span>
+                </div>
+            </li>
         </ul>
-    </div>
-    <div class="header">
-        <img src="images/taobaologo.jpg" alt="淘宝logo" class="taobaologo">
-            <div class="border">
-                <select class="select"><option>宝贝</option></select><!--用option使下拉框有字-->
-            
-            <!--网上找的例子<select class="form-control form-filter" style="height: 30px;padding: 4px 12px;">
-                            <option value="男">男</option>
-                            <option value="女">女</option>
-                            <option value="其他">其他</option>
-                        </select>-->
-            <!--添加图标这个有点晕，感觉不是最正确的方法，而且输入字段预设的这些也消不掉。借鉴https://www.cnblogs.com/LXJ-CHEER/p/4731087.html-->
-                <label for="keywords" id="keywords_label">红米note7pro手机壳</label>
-                <input type="text" id="keywords">
-                <img class="search" src="images/search.png">
-                <a href="#"><img src="images/camera.png" class="camera"></a>
-            <button type="submit">搜索</button>
-             </div>
-    </div>
-    <div class="container">
-    <div class="container1">
-        <div class="top">
-            <div class="title"><div class="linelogo"></div>热卖单品</div><!--嵌套加float变为一行或用display-->
-        <div class="small">
-                <a href="#" target="_blank">小分解</a>
-                <a href="#" target="_blank">下拉框</a>
-                <a href="#" target="_blank">录音</a>
-                <a href="#" target="_blank">爸爸鞋</a>
-                <a href="#" target="_blank">代运营</a>
-                <a href="#" target="_blank">低帮鞋</a>
-                <a href="#" target="_blank">男皮鞋</a>
-                <a href="#" target="_blank">录音笔</a>
-                <a href="#" target="_blank">降重</a>
-                <a href="#" target="_blank">好皮鞋</a>
-                <a href="#" target="_blank">男外套</a>
-                <a href="#" target="_blank">衣服</a>
-                <a href="#" target="_blank">骆驼鞋</a>
-                <a href="#" target="_blank">夹克</a>
-                <a href="#" target="_blank">牛仔服</a>
-                <a href="#" target="_blank">男毛衣</a>
-                <a href="#" target="_blank">男鞋夏</a>
-                <a href="#" target="_blank">休闲鞋</a>
-                <a href="#" target="_blank">线衫</a>
-                <a href="#" target="_blank">查重</a>
-                <a href="#" target="_blank">男鞋</a>
-                <a href="#" target="_blank">夹克男</a>
-                <div class="ad">广告</div>
         </div>
-        
+    </div>
+</div>
+<div class="header">
+    <div class="top">
+        <div class="top-main">
+            <!--:before 选择器在被选元素的内容前面插入内容。使用 content 属性来指定要插入的内容。默认地，这个伪元素是行内元素，不过可以使用属性 display 改变这一点。-->
+          <div class="tb-logo">
+              <div class="logo">
+                  <a href="#"></a>
+              </div>
+          </div>
+          <div class="tb-search">
+              <div class="search-main">
+                  <div class="search-bd">
+                      <div class="search">
+                          <div class="search-button">
+                              <button class="btn-search">搜索</button>
+                          </div>
+                          <div class="search-input">
+                              <div class="goods">
+                                  <div class="goods-main">
+                                        <span>宝贝</span>
+                                        <span class="arrow">
+                                            <span class="icon iconfont icon-xia"></span>
+                                        </span>
+                                  </div>
+                              </div>
+                              <div class="box">
+                                <input type="text" placeholder="红米note7pro手机壳">
+                              </div>
+                              <div class="camera-icon">
+                                  <span class="iconfont icon-camera"></span>
+                              </div>
+                              <i class="search-icon iconfont icon-search"></i>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
         </div>
-        <div class="item">
-            <div class="item1">
-                    <a href="#"><img src="images/item1.jpg" alt="商品1"></a>
-                    <a href="#" class="name">大陆合代驾锂电迷你小型电动滑板车电动成人</a>
-                    <div class="number">
-                        <a href="#">评价 15389</a>
-                        <a href="#">收藏 194712</a>
-                    </div>
-                    <div class= "price">
-                        <a href="#" class="now">
-                            <span>￥</span><em>799</em>
-                        </a>
-                        <a href="#" class="before">
-                            ￥1988
-                        </a>
-                        <a href="#" class="sale">
-                            月销7453笔
-                        </a>
-                    </div>    
-                </div>        
-            </div>
-            <div class="item2">
-                    <a href="#"><img src="images/item2.jpg" alt="商品2"></a>
-                    <a href="#" class="name"><div class="baoyou">包邮</div>刀锋男鞋韩版百搭运动鞋子男英伦潮流时尚潮</a>
-                    <div class="number">
-                            <a href="#">评价 1843</a>
-                            <a href="#">收藏 9572</a>
-                    </div>
-                    <div class= "price">
-                        <a href="#" class="now">
-                            <span>￥</span><em>168</em>
-                        </a>
-                        <a href="#" class="before">
-                            ￥288
-                        </a>
-                        <a href="#" class="sale">
-                            月销2841笔
-                        </a>
-                    </div>    
-            </div>     
-            <div class="item3">
-                    <a href="#"><img src="images/item3.jpg" alt="商品3"></a>
-                    <a href="#" class="name">折叠电动滑板车便携电动车小型成人代步车</a>
-                    <div class="number">
-                            <a href="#">评价 127</a>
-                            <a href="#">收藏 2534</a>
-                    </div>
-                    <div class= "price">
-                        <a href="#" class="now">
-                            <span>￥</span><em>1899</em>
-                        </a>
-                        <a href="#" class="before">
-                            ￥2099
-                        </a>
-                        <a href="#" class="sale">
-                            月销66笔
-                        </a>
-                    </div>    
-            </div>     
-            <div class="item4">
-                    <a href="#"><img src="images/item4.jpg" alt="商品3"></a>
-                    <a href="#" class="name">越野10寸锂电池电动滑板车成人折叠代驾两</a>
-                    <div class="number">
-                            <a href="#">评价 13</a>
-                            <a href="#">收藏 168</a>
-                    </div>
-                    <div class= "price">
-                        <a href="#" class="now">
-                            <span>￥</span><em>698</em>
-                        </a>
-                        <a href="#" class="before">
-                            ￥3200
-                        </a>
-                        <a href="#" class="sale">
-                            月销100笔
-                        </a>
-                    </div>
-            </div>
-            <div class="item5">
-                    <a href="#"><img src="images/item5.jpg" alt="商品2"></a>
-                    <a href="#" class="name"><div class="baoyou">包邮</div>Imix2019新款便携式掌上迷你微型投影仪</a>
-                    <div class="number">
-                            <a href="#">评价 7447</a>
-                            <a href="#">收藏 218564</a>
-                    </div>
-                    <div class= "price">
-                        <a href="#" class="now">
-                            <span>￥</span><em>1699</em>
-                        </a>
-                        <a href="#" class="before">
-                            ￥2499
-                        </a>
-                        <a href="#" class="sale">
-                            月销3341笔
-                        </a>
-                    </div>    
-            </div>
-        </div>
-    
-    <div class="rightsidebar">
-        
-        <div class="half"><img src="images/iconfont-wangwang.png" class="wangwang"></div>
-        <div class="col">
-        <a href="#" class="one">爱逛好货</a>
-        <a href="#" class="two">好店直播</a>
-        <a href="#" class="three">品质特色</a>
-        <a href="#" class="four">实惠热卖</a>
-        <a href="#" class="five">猜你喜欢</a>
-        <a href="#" class="six">顶部</a>
-        <a href="#" class="seven">反馈</a>
-        <a href="#" class="eight">暴恐举报</a>
     </div>
+</div>
+<div class="body">
+    <div class="body-top">
+       <div class="body-main">
+           <div class="tb-sale">
+               <h3>热卖单品</h3>
+               <div class="sale-hd">
+                   <div class="sale-hd-item">
+                        <a title="小分解" href="#" target="_blank">小分解</a>
+                        <a title="下拉框" href="#" target="_blank">下拉框</a>
+                        <a title="录音" href="#" target="_blank">录音</a>
+                        <a title="爸爸鞋" href="#" target="_blank">爸爸鞋</a>
+                        <a title="代运营" href="#" target="_blank">代运营</a>
+                        <a title="低帮鞋" href="#" target="_blank">低帮鞋</a>
+                        <a title="男皮鞋" href="#" target="_blank">男皮鞋</a>
+                        <a title="录音笔" href="#" target="_blank">录音笔</a>
+                        <a title="降重" href="#" target="_blank">降重</a>
+                        <a title="好皮鞋" href="#" target="_blank">好皮鞋</a>
+                        <a title="男外套" href="#" target="_blank">男外套</a>
+                        <a title="衣服" href="#" target="_blank">衣服</a>
+                        <a title="骆驼鞋" href="#" target="_blank">骆驼鞋</a>
+                        <a title="夹克" href="#" target="_blank">夹克</a>
+                        <a title="牛仔服" href="#" target="_blank">牛仔服</a>
+                        <a title="男毛衣" href="#" target="_blank">男毛衣</a>
+                        <a title="男鞋夏" href="#" target="_blank">男鞋夏</a>
+                        <a title="休闲鞋" href="#" target="_blank">休闲鞋</a>
+                        <a title="线衫" href="#" target="_blank">线衫</a>
+                        <a title="查重" href="#" target="_blank">查重</a>
+                        <a title="男鞋" href="#" target="_blank">男鞋</a>
+                        <a title="夹克男" href="#" target="_blank">夹克男</a>
+                   </div>
+                   <img class="ad" src="https://img.alicdn.com/tfs/TB13L7fbMoQMeJjy0FnXXb8gFXa-64-30.png">
+               </div>
+               <ul class="sale-bd">
+                   <li class="item item1">
+                      <a href="#" class="image"><img src="images/item1.jpg" alt="商品1"></a>
+                      <a href="#" class="line-1">
+                        大陆合代驾锂电迷你小型电动滑板车电动成人
+                      </a>
+                      <div class="line-2">
+                          <a href="#" class="comment">评价 15389</a>
+                          <a href="#" class="collect">收藏 194712</a>
+                      </div>
+                      <div class="line-3">
+                          <a href="#" class="now"><span>￥</span><span class="normal">799</span></a>
+                          <a href="#" class="before">￥1988</a>
+                          <a href="#" class="sell">月销7453笔</a>
+                      </div>
+                   </li>
+                   <li class="item item2">
+                        <a href="#" class="image"><img src="images/item2.jpg" alt="商品2"></a>
+                        <a href="#" class="line-1">
+                          <img title="包邮" class="postfree" src="https://img.alicdn.com/tfs/TB1APkObOIRMeJjy0FbXXbnqXXa-56-32.png">
+                          刀锋男鞋韩版百搭运动鞋子男英伦潮流时尚潮
+                        </a>
+                        <div class="line-2">
+                            <a href="#" class="comment">评价 1843</a>
+                            <a href="#" class="collect">收藏 9572</a>
+                        </div>
+                        <div class="line-3">
+                            <a href="#" class="now"><span>￥</span><span class="normal">168</span></a>
+                            <a href="#" class="before">￥288</a>
+                            <a href="#" class="sell">月销2841笔</a>
+                        </div>
+                     </li>
+                     <li class="item item3">
+                            <a href="#" class="image"><img src="images/item3.jpg" alt="商品3"></a>
+                            <a href="#" class="line-1">
+                                折叠电动滑板车便携电动车小型成人代步车
+                            </a>
+                            <div class="line-2">
+                                <a href="#" class="comment">评价 127</a>
+                                <a href="#" class="collect">收藏 2534</a>
+                            </div>
+                            <div class="line-3">
+                                <a href="#" class="now"><span>￥</span><span class="normal">1899</span></a>
+                                <a href="#" class="before">￥2099</a>
+                                <a href="#" class="sell">月销66笔</a>
+                            </div>
+                         </li>
+                    <li class="item item4">
+                        <a href="#" class="image"><img src="images/item4.jpg" alt="商品4"></a>
+                        <a href="#" class="line-1">
+                                越野10寸锂电池电动滑板车成人折叠代驾两
+                        </a>
+                        <div class="line-2">
+                            <a href="#" class="comment">评价 13</a>
+                            <a href="#" class="collect">收藏 168</a>
+                        </div>
+                        <div class="line-3">
+                            <a href="#" class="now"><span>￥</span><span class="normal">698</span></a>
+                            <a href="#" class="before">￥3200</a>
+                            <a href="#" class="sell">月销100笔</a>
+                        </div>
+                    </li>
+                    <li class="item item5">
+                            <a href="#" class="image"><img src="images/item5.jpg" alt="商品5"></a>
+                            <a href="#" class="line-1">
+                              <img title="包邮" class="postfree" src="https://img.alicdn.com/tfs/TB1APkObOIRMeJjy0FbXXbnqXXa-56-32.png">
+                              Imix2019新款便携式掌上迷你微型投影仪
+                            </a>
+                            <div class="line-2">
+                                <a href="#" class="comment">评价 7447</a>
+                                <a href="#" class="collect">收藏 218564</a>
+                            </div>
+                            <div class="line-3">
+                                <a href="#" class="now"><span>￥</span><span class="normal">1699</span></a>
+                                <a href="#" class="before">￥2499</a>
+                                <a href="#" class="sell">月销3341笔</a>
+                            </div>
+                         </li>
+               </ul>
+           </div>
+       </div>
     </div>
-    </div>
+</div>
+<div class="fixedtool">
+    <span class="iconfont icon-wangwang"></span>
+    <a href="#" class="fixedtool-1">爱逛<br>好货</a>
+    <a href="#" class="fixedtool-2">好店<br>直播</a>
+    <a href="#" class="fixedtool-3">品质<br>特色</a>
+    <a href="#" class="fixedtool-4">实惠<br>热卖</a>
+    <a href="#" class="fixedtool-5">猜你<br>喜欢</a>
+    <a href="#" class="fixedtool-6"><span class="iconfont icon-fanhuidingbu-"></span>顶部</a>
+    <a href="#" class="fixedtool-7"><span>反馈</span></a>
+    <a href="#" class="fixedtool-8">暴恐<br>举报</a>
+</div>
 </body>
-</html>

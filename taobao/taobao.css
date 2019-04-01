@@ -1,620 +1,517 @@
-*{
-    padding: 0;
-    margin: 0;
-}
+*{margin: 0;
+padding: 0;}/*一定要设置，不然后面会有错误。*/ 
 body{
-    background-color: rgb(240, 239, 239);
+    color: #3C3C3C;
+    -webkit-font-smoothing: antialiased;/*这个属性可以使页面上的字体抗锯齿,使用后字体看起来会更清晰舒服。none用于小像素的文本 | subpixel-antialiased浏览器默认的 | antialiased反锯齿*/
+    background-color: #f4f4f4;
 }
-.topnav{
+body, button, input, select, textarea {
+    font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+}
+div{
+    display: block;
+}
+.site-nav{
+    z-index: 10000;/*层在屏幕的纵深方向，上一层遮住下一层*/
     width: 100%;
-    height: 40px;
-    background-color: rgb(240, 239, 239);
-    line-height: 40px;/*用与height相同来垂直居中*/
-    font-size: 15px;
-    font-weight: lighter;
-    color: rgb(63, 63, 63);
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #eee;
 }
-.topnavleft{
-    float: left;
-    padding-left: 100px;
+.site-nav .site-nav-bd{
+    margin: 0 auto;
+    width: 1190px;
+    height: 35px;
+    background: #f5f5f5;
 }
-.topnavleft li{
+.site-nav .site-nav-bd .site-nav-bd-l{
     float: left;
+}
+.site-nav .site-nav-menu{
+   float: left;
+}
+ul{
     list-style: none;
-    padding-right: 15px;
+    display: block;
+    /*-webkit-margin-before:1em 是元素上边距数值为1倍字体高度 即字体高为10px的话，上边距就为10px -webkit是浏览器内核 -webkit-margin-before是用于内核为-webkit的浏览器的*/
 }
-.topnavright{
-    float: right;
-    padding-right: 50px;
+li{
+    display: inline;/*li display:inline 或block加float: left实现ul横向排列。 如果需要让li具有高度和宽度，并且需要调节菜单内容的位置，必须将display属性值设置为block，将其变成块级元素后，padding,text-align等属性才起作用。*/
+    text-align: -webkit-match-parent;/*文本对齐的方式：匹配父类盒子对齐的方式*/
 }
-.topnavright li{
+.site-nav .site-nav-menu .site-nav-menu-hd{
+    z-index: 10002;
+    position: relative;
+    left: 0;
+    padding: 0 6px;
+    height: 35px;
+    line-height: 35px;/*用与height相同来垂直居中*/
+}
+.site-nav .site-nav-menu .site-nav-region{
     float: left;
-    list-style: none;
-    padding-left: 30px;
+    margin-right: 7px;
 }
-.red{
-    color: red;
-}
-.black{
-    color: rgb(15, 15, 15);
-}
-.header{
-    width: 100%;
-    height: 60px;
-    background-color: rgb(255, 255, 255);
+.site-nav .site-nav-arrow{
+    display: block;
+    float: left;
+    width: 12px;
+    height: 6px;
+    line-height: 6px;
     overflow: hidden;
+    margin-top: 16px;
+}
+.site-nav .site-nav-icon{
+    font-size: 14px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 5px;
+    color: #9c9c9c;
+}
+.site-nav .site-nav-arrow .site-nav-icon{
+    display: block;
+    margin-top: -4px;
+    margin-right: 20px;
+}
+a{
+    color: #3C3C3C;
+    cursor: pointer;
+    text-decoration: none;
+}
+.site-nav .site-nav-menu .site-nav-menu-hd a{/*定位要非常精确*/
+    float: left;
+    margin-right: 7px;
+    color: #6c6c6c;
+}
+.site-nav .site-nav-bd .h{
+    color: #f22e00 !important;
+}
+.site-nav .site-nav-bd .site-nav-bd-r{
+    float: right;
+}
+.site-nav .site-nav-menu .site-nav-menu-hd a span{
+    float: left;
+    cursor: pointer;
+}
+.site-nav .site-nav-bd-r .site-nav-icon{
+    width: 12px;
+}
+.site-nav .icon-cart{
+    color: #f40;
+}  
+.site-nav .site-nav-bd .site-nav-bd-r .site-nav-pipe{
+    float: left;
+    height: 35px;
+    line-height: 35px;
+}
+.site-nav .site-nav-bd .site-nav-pipe{
+    padding: 0 5px;
+    font-style: normal;
+    color: #ddd;
+}
+.site-nav .icon-list{
+    color: #f40;
+    font-size: 13px!important;
 }
 
-.taobaologo{
-    height: 80px;/*一般来说图片只设置宽或者高即可*/
-    float: left;
-    border: 0;
-    margin-left: 1%;
-    margin-top: -12px;
-}
-.border{
-    border: 2px rgb(253, 114, 21) solid;
-    width: 50%;
+.top{
+    z-index: 1001;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 40px;
-    margin: 10px auto auto auto;
-    /*background-color: blue;*/
-    border-radius: 20px;/*边框变形一半的高度两侧椭圆*/
+    padding: 7px 0;
+    background-color: #fff;
+    margin-top: 36px;
 }
-.select{
-    border: 0;
-    width: 10%;
-    height: 36px;
-    background-color: rgb(216, 215, 215);
-    font-size: 15px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+.top-main{
+    width: 1190px;
+    margin: 0 auto;
+    position: relative;/*相对定位，对象遵循正常文档流，但将依据top，right，bottom，left等属性在正常文档流中偏移位置。位置属性被设置为relative之后，是相对于前面的容器定位的。这个时候不能用top left在定位。应该用margin。它可以随窗口大小变化。但大小仍然不会变。要是你设置成width:100%;height:100%;这样就会随着窗口变大变小。 */
+}
+.tb-logo{
     float: left;
-    padding-left: 15px;
-    margin-left: 1px;
+    width: 190px;
 }
-label{
-    z-index: 2;
+.logo{
+    height: 33px;
+    background-position: 0 -80px;
+    width: 100px;
+    margin-top: 0;
+}
+.tb-logo .logo a{/*这里的方法是设置高为0，使框内整个空白，把图片作为背景插入，padding-top其实是图片的高。*/
+    display: block;
+    padding-top: 33px;
+    width: 80px;
+    height: 0;
+    overflow: hidden;
+    text-indent: -9999px;/*文本缩进，负值缩进到左边*/
+    background: url(https://img.alicdn.com/tfs/TB1TGfMcwMPMeJjy1XbXXcwxVXa-80-33.png) no-repeat;
+}
+.tb-search{
+    margin-left: 258px;
+    margin-right: 302px;
+    margin-top: -24px;
+}
+.search-main{
+    position: relative;
+}
+.search-bd{
+    z-index: 30px;/*z-index属性适用于定位元素(position属性值为 relative 或 absolute 或 fixed的对象)，用来确定定位元素在垂直于显示屏方向(称为Z轴)上的层叠顺序(stack order)。*/
+    position: relative;
+    height: 40px;
+    margin-top: 22px;
+}
+.tb-search .search{
+    position: relative;
+}
+.search-bd .search .search-button{
     position: absolute;
-    left: 31%;
-    margin-left: 2%;
-    color: #b2b2b2;
-    line-height: 40px;
-    font-size: 15px;
-    font-weight: lighter;
-}
-.search{
-    position: absolute;
-    left: 31%;
-    width: 22px;
-    height: 22px;
-    margin-top: 8px;
-}
-input{
-    border: 0;
-    width: 80%;
-    height: 36px;
-    float: left;
-}
-.camera{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    left: 67%;
-    margin-top: 4px;
-}
-button{
-    border: 0;
-    width: 10%;
-    height: 36px;
-    float: right;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 74px;
+    height: 40px;
+    overflow: hidden;
+    text-align: center;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    background-color: rgb(253, 100, 45);
-    font-size: 20px;
-    text-align: center;
-    color: white;
-    margin-left: -1px;
 }
-.container{
-    width: 96%;
-    background-color: white;
-    margin: 10px auto auto auto;
+.search-bd .search .search-button .btn-search{
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFF;
+    background-color: #FF4200;
+    cursor: pointer;
+    height: 100%;
+    border: none;
+    width: 100%;
+    background-image: linear-gradient(to right,#ff9000 0,#ff5000 100%);
+    background-repeat: repeat-x;
 }
-.container1{
-    width: 94%;
-    background-color: white;
-    float: left;
+.search-bd .search .search-input{
+    margin-right: 74px;
+    border: 2px solid #ff5000;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-right: none;
+    overflow: hidden;
+    height: 36px;
 }
-.title{
-    height: 40px;
-    font-size: 22px;
-    line-height: 40px;
-    color: rgb(247, 36, 36);
-    margin: 15px auto 15px 10px;
-    font-weight: bold;
-}
-.linelogo{
-    width: 6px;
-    height: 16px;
-    border: 1px solid rgb(214, 59, 2);
-    background-color: rgb(214, 59, 2);
+.search-bd .search .goods{
     display: inline-block;
+    height: 36px;
+    width: 72px;
+    margin-right: 554px;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.search-bd .search .goods .goods-main{
+    margin: 8px auto 5px 24px;
+    width: 60px;
+}
+.search-bd .search .goods span{
+    float: left;
+    font-weight: 500;
     margin-right: 5px;
 }
-.small{
-    margin-bottom: 15px;
-}
-.small a{
-    color: gray;
-    font-size: 12px;
-    word-spacing: 10px;
-    padding-left: 10px;
-    text-decoration: none;
-}
-.ad{
-    color: rgb(194, 194, 194);
-    border: 1px solid rgb(194, 194, 194);
-    width: 36px;
-    height: 18px;
-    font-size: 10px;
-    border-radius: 10px;
-    float: right;
-    margin: 4px 10px 0 0;
-    text-align: center;
-    line-height: 18px;
-}
-.item{
-    width: 100%;
-}
-*{box-sizing: border-box;}/*图片水平排列，
-最基本的一点要设置盒子模型为border-box，这样能保证每一个img的宽度计算方式为content+padding+border,
-就算设置padding和border也不影响总宽度。以后要更改间距，只要更改border-width即可。*/
-.item1{
-    width: 20%;
-    height: 430px;
-    border: 1px solid rgb(240, 239, 239);
-    padding: 20px 24px 10px 24px;
-    float: left;
-}
-.item1 img{
-    height: 250px;
-    margin-bottom: 5px;
-}
-.item1 .name{
-    font-size: 15px;
-    color: rgb(65, 65, 65);
-    font-weight: normal;
-    text-decoration: none;
-    cursor: pointer;
-}
-.item1 .number{
-    margin-bottom: 20px;
-    margin-top: 15px;
-}
-.item1 .number a{
-    font-size: 10px;
-    color: gray;
-    text-decoration: none;
-    cursor: pointer;
-}
-.item1 .price{
-    height: 24px;
-    line-height: 24px;
+.search-bd .search .goods .arrow{
+    display: block;
+    width: 6px;
+    height: 3px;
+    line-height: 5px;
     overflow: hidden;
-    display: block;
+    position: absolute;
+    top: 19px;
+    left: 58px;
 }
-.item1 .price .now{
-    color: rgb(253, 100, 45);
-    text-decoration: none;
+.search-bd .search .goods .icon{
+    margin-left: -3px;
+    margin-top: -1px;
+    font-size: 1px;
+    color: #9c9c9c;
 }
-.item1 .price .now span{
-    cursor: pointer;/*光标呈现为指示链接的指针（一只手）*/
-    font-size: 10px;
-}
-.item1 .price .now em{
-    font-size: 30px;
-    font-style: normal;
-}
-.item1 .price .before{
-    color: gray;
-    text-decoration: line-through;
-    cursor: pointer;
-    font-size: 10px;
-}
-.item1 .price .sale{
-    cursor: pointer;
-    text-decoration: none;
-    color: gray;
-    float: right;
-    display: block;
-    margin-top: 3px;/*!!!!!!!!!!字体大小不一致时如何使浮动的字体与其他字体底线一致：只需移动上下距离。。*/
-}
-.item2{
-    width: 20%;
-    height: 430px;
-    border: 1px solid rgb(240, 239, 239);
-    padding: 20px 24px 10px 24px;
-    float: left;
-}
-.item2 img{
-    height: 250px;
-    margin-bottom: 5px;
-}
-
-.item2 .name .baoyou{
-    font-size: 10px;
-    width: 38px;
-    height: 22px;
-    background-color: rgb(114, 168, 31);
-    color: white;
-    float: left;
-    border-radius: 7px;
-    padding-top: 1px;
-    text-align: center;
-}
-.item2 .name{
-    font-size: 15px;
-    color: rgb(65, 65, 65);
-    font-weight: normal;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.item2 .number{
-    margin-bottom: 20px;
-    margin-top: 15px;
-}
-.item2 .number a{
-    font-size: 10px;
-    color: gray;
-    text-decoration: none;
-    cursor: pointer;
-}
-.item2 .price{
-    height: 24px;
-    line-height: 24px;
+.search-bd .search .search-input .box{
+    position: absolute;
+    left: 106px;
+    top: 2px;
+    height: 36px;
     overflow: hidden;
-    display: block;
+    width: 420px;
+    vertical-align: middle;
 }
-.item2 .price .now{
-    color: rgb(253, 100, 45);
-    text-decoration: none;
-}
-.item2 .price .now span{
-    cursor: pointer;
-    font-size: 10px;
-}
-.item2 .price .now em{
-    font-size: 30px;
-    font-style: normal;
-}
-.item2 .price .before{
-    color: gray;
-    text-decoration: line-through;
-    cursor: pointer;
-    font-size: 10px;
-}
-.item2 .price .sale{
-    cursor: pointer;
-    text-decoration: none;
-    color: gray;
-    float: right;
-    display: block;
+.search-bd .search .search-input input{
     margin-top: 3px;
+    padding: 6px 0;
+    width: 410px;
+    height: 20px;
+    line-height: 20px;
+    border: none;
+    outline: 0;/*outline(轮廓)是绘制在元素周围的一条线，位于边框边缘的外围，起突出元素的作用。轮廓线不会占用空间，也不一定是矩形*/
+    background: #fff;
 }
-.item3{
-    width: 20%;
-    height: 430px;
-    border: 1px solid rgb(240, 239, 239);
-    padding: 20px 24px 10px 24px;
-    float: left;
+.search-bd .search .search-input .camera-icon{
+    position: absolute;
+    top: 2px;
+    right: 90px;
+    height: 36px;
 }
-.item3 img{
-    height: 250px;
-    margin-bottom: 5px;
-}
-.item3 .name{
-    font-size: 15px;
-    color: rgb(65, 65, 65);
-    font-weight: normal;
-    text-decoration: none;
+.search-bd .search .search-input .camera-icon span{
+    font-size: 24px;
+    color: #999;
+    display: inline-block;
     cursor: pointer;
 }
-.item3 .number{
-    margin-bottom: 20px;
-    margin-top: 15px;
-}
-.item3 .number a{
-    font-size: 10px;
-    color: gray;
-    text-decoration: none;
-    cursor: pointer;
-}
-.item3 .price{
-    height: 24px;
-    line-height: 24px;
-    overflow: hidden;
-    display: block;
-}
-.item3 .price .now{
-    color: rgb(253, 100, 45);
-    text-decoration: none;
-}
-.item3 .price .now span{
-    cursor: pointer;
-    font-size: 10px;
-}
-.item3 .price .now em{
-    font-size: 30px;
-    font-style: normal;
-}
-.item3 .price .before{
-    color: gray;
-    text-decoration: line-through;
-    cursor: pointer;
-    font-size: 10px;
-}
-.item3 .price .sale{
-    cursor: pointer;
-    text-decoration: none;
-    color: gray;
-    float: right;
-    display: block;
-    margin-top: 3px;
-}
-.item4{
-    width: 20%;
-    height: 430px;
-    border: 1px solid rgb(240, 239, 239);
-    padding: 20px 24px 10px 24px;
-    float: left;
-}
-.item4 img{
-    height: 250px;
-    margin-bottom: 5px;
-}
-.item4 .name{
-    font-size: 15px;
-    color: rgb(65, 65, 65);
-    font-weight: normal;
-    text-decoration: none;
-    cursor: pointer;
-}
-.item4 .number{
-    margin-bottom: 20px;
-    margin-top: 15px;
-}
-.item4 .number a{
-    font-size: 10px;
-    color: gray;
-    text-decoration: none;
-    cursor: pointer;
-}
-.item4 .price{
-    height: 24px;
-    line-height: 24px;
-    overflow: hidden;
-    display: block;
-}
-.item4 .price .now{
-    color: rgb(253, 100, 45);
-    text-decoration: none;
-}
-.item4 .price .now span{
-    cursor: pointer;
-    font-size: 10px;
-}
-.item4 .price .now em{
-    font-size: 30px;
-    font-style: normal;
-}
-.item4 .price .before{
-    color: gray;
-    text-decoration: line-through;
-    cursor: pointer;
-    font-size: 10px;
-}
-.item4 .price .sale{
-    cursor: pointer;
-    text-decoration: none;
-    color: gray;
-    float: right;
-    display: block;
-    margin-top: 3px;
-}
-.item5{
-    width: 20%;
-    height: 430px;
-    border: 1px solid rgb(240, 239, 239);
-    padding: 20px 24px 10px 24px;
-    float: left;
-}
-.item5 img{
-    height: 250px;
-    margin-bottom: 5px;
-}
-.item5 .name .baoyou{
-    font-size: 10px;
-    width: 38px;
-    height: 22px;
-    background-color: rgb(114, 168, 31);
-    color: white;
-    float: left;
-    border-radius: 7px;
-    padding-top: 1px;
-    text-align: center;
-}
-.item5 .name{
-    font-size: 15px;
-    color: rgb(65, 65, 65);
-    font-weight: normal;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.item5 .number{
-    margin-bottom: 20px;
-    margin-top: 15px;
-}
-.item5 .number a{
-    font-size: 10px;
-    color: gray;
-    text-decoration: none;
-    cursor: pointer;
-}
-.item5 .price{
-    height: 24px;
-    line-height: 24px;
-    overflow: hidden;
-    display: block;
-}
-.item5 .price .now{
-    color: rgb(253, 100, 45);
-    text-decoration: none;
-}
-.item5 .price .now span{
-    cursor: pointer;
-    font-size: 10px;
-}
-.item5 .price .now em{
-    font-size: 30px;
-    font-style: normal;
-}
-.item5 .price .before{
-    color: gray;
-    text-decoration: line-through;
-    cursor: pointer;
-    font-size: 10px;
-}
-.item5 .price .sale{
-    cursor: pointer;
-    text-decoration: none;
-    color: gray;
-    float: right;
-    display: block;
-    margin-top: 3px;
-}
-.item1:hover{
-    border-color: orangered;
-}
-.item2:hover{
-    border-color: orangered;
-}
-.item3:hover{
-    border-color: orangered;
-}
-.item4:hover{
-    border-color: orangered;
-}
-.item5:hover{
-    border-color: orangered;
-}
-
-.rightsidebar{
-    width: 4%;
-    transition: none;
-    float: left;
+.search-bd .search .search-input i{
     font-size: 18px;
-    text-align: center;
-    position: fixed;
-    top: 100px;
-    left: 92.3%;
+    position: absolute;
+    top: 6px;
+    left: 84px;
+    color: #666;
 }
-.rightsidebar .half{
-    margin-left: 10px;
-    width: 40px;
-    height: 19px;
+.body{
+    width: 1190px;
+    margin: 0 auto;
+}
+.body-top{
+    margin-top: 64px;
+}
+.body-main{
+    min-height: 0;
+    background-color: #fff;
+}
+.tb-sale{
+    width: 1190px;
+    clear: both;
+    min-height: 962px;
     overflow: hidden;
 }
-.rightsidebar .wangwang{
-    width: 40px;
-    height: 40px;
-    
+.tb-sale h3{
+    position: relative;
+    height: 22px;
+    line-height: 22px;
+    margin: 17px 18px;
+    font-size: 20px;
+    color: #ff242d;
 }
-.rightsidebar .col{
-    margin-top: 0;
-    background-color: white;
-    border-radius: 10px;  
-    height: 520px;
+.tb-sale h3::before{
+    content: "";
+    position: relative;
+    float: left;
+    top: 2px;
+    width: 4px;
+    height: 16px;
+    background: #ff242d;
+    background: linear-gradient(to bottom, #ff7436, #ff0000);/*线性渐变*/
+    margin-right: 7px;
 }
-.rightsidebar a{
-    border-bottom: 1px rgb(228, 227, 227) solid;
-    padding: 10px;
+.tb-sale .sale-hd{
+    padding: 0 0 13px 18px;
+    overflow: hidden;
+    position: relative;
+}
+.tb-sale .sale-hd .sale-hd-item{
+    float: left;
     display: block;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    max-width: 1110px;
+}
+.tb-sale .sale-hd .sale-hd-item a{
+    display: block;
+    float: left;
+    margin-bottom: 10px;
+    padding-right: 15px;
+    color: #999;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+}
+.tb-sale .sale-hd .ad{
+    width: 32px;
+    height: 15px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+}
+.tb-sale .sale-bd{
+    height: 703px;
+    margin-left: 1px;
+}
+.tb-sale .sale-bd .item:hover{
+    border: 1px solid #ff5000;
+    z-index: 1;
+}
+.tb-sale .sale-bd .item{
+    float: left;
+    width: 196.8px;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #f4f4f4;
+    margin: -1px 0 0 -1px;
+}
+.tb-sale .image{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0;
+    position: relative;
+}
+.tb-sale .image img{
+    border: 0;
+    width: 197px;
+    height: 197px;
+}
+.tb-sale .line-1{
+    display: block;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    margin: 8px 0;
+    color: #666;
+    font-size: 14px;
+}
+.tb-sale .line-2{
+    height: 18px;
+    margin-bottom: 17px;
+}
+.tb-sale .comment, .tb-sale .collect{
+    color: #999;
+    float: left;
+    margin-right: 10px;
+}
+.tb-sale .line-3{
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+}
+.tb-sale .line-3 .now{
+    color: #ff5000;
+    margin-right: 3px;
+}
+.tb-sale .now .normal{
+    font-size: 22px;
+    margin-left: 2px;
+}
+.tb-sale .before{
+    color: #999;
+    font-family: arial;
+    text-decoration: line-through;
+}
+.tb-sale .sell{
+    color: #999;
+    float: right;
+    display: block;
+    margin-top: 3px;
+}
+.tb-sale .postfree{
+    height: 16px;
+    position: relative;
+    width: 28px;
+    display: inline-block;
+    top: 3px;
+    margin-right: 5px;
+}
+.tb_Sale .sale-bd .item-1{
+    border-left: 1px solid #fff;
+}
+.tb_Sale .sale-bd .item-5{
+    border-right: 1px solid #fff;
+}
+.fixedtool{
+    position: fixed;
+    top: 110px;
+    display: block;
+    transition: none;
+    margin-right: -633px;
+    z-index: 4;
+    right: 50%;
+    width: 50px;
+    text-align: center;
+}
+.fixedtool .icon-wangwang{
+    position: absolute;/*postion:absolute 跳出文本流，不是行内元素，设置宽高有效，我的理解。ostion属性一共有4个值，分别为static，absolute，relative和fixed。（1）       static为默认值，它表示块保持在原本应该在的位置上，即改值没有任何移动的效果。（2）       当子块的postion值设为absolute时，子块已经不再从属于父块。注：top，right，bottom和left这4个css属性，他们都是配合position属性使用的，不但可以设置为绝对像素，也可以设置为表分数，表示块的各个边界离页面边框（postion=absolute）的距离，或者各个边界离原来位置（postion=relative）的距离。只有当postion属性设置为absolute或者relative时才能生效。如果设置为static，则子块不会有任何变化。（3）块的postion设置为relative时，与将其设置为absolute时完全不同。这时子块是相对于其父块来进行定位的，同样配合top，right，bottom和left这4个属性来使用的。*/
+    height: 36px;
+    width: 50px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 32px;
+    color: #ff7f13;
+    top: -20px;
+    right: 0
+}
+.fixedtool-1{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-clip: padding-box;/*背景剪裁属性是从指定位置开始绘制。*/
+    color: #f40;
+    padding-top: 10px;
+    height: 40px;
+}
+.fixedtool a{
+    line-height: 17px;
+    font-size: 13px;
+    height: 44px;
+    display: block;
+    position: relative;
     text-decoration: none;
+    padding: 6px 8px 0;
+    background: #fff;
 }
-.one{
-    color: orangered;
+.fixedtool a::after{
+    content: '';
+    border-bottom: 1px solid #efefef;
+    width: 34px;
+    position: absolute;
+    left: 8px;
+    bottom: -1px;
+    z-index: 1;
 }
-.two{
-    color: rgb(241, 72, 129);
+.fixedtool-2{
+    color:#f05;
 }
-.three{
-    color: rgb(66, 66, 245);
+.fixedtool-3{
+    color: #8d7afb;
 }
-.four{
-    color: greenyellow;
+.fixedtool-4{
+    color: #A8C001;
 }
-.five{
-    color: red;
+.fixedtool a:hover{
+    z-index: 2;
+    text-decoration: none;
+    color: #FFF;
+    background-repeat: no-repeat;
+    font-weight: 700;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(135deg,#ff971b,#ff5000);
 }
-.six{
-    color: black;
+.fixedtool-5{
+    color: #F40;
 }
-.seven{
-    color: black;
+.icon-fanhuidingbu-{
+    color: #999;
+    position: relative;
+    line-height: 20px;
+    display: block;
 }
-.eight{
-    color: black;
+.fixedtool-6, .fixedtool-7, .fixedtool-8{
+    font-size: 12px;
 }
-.one:hover{
-    background-color: rgb(253, 100, 45);
-    color: white;
-    transition: all .2s;/*过渡效果变大*/
-    font-weight: bold;
+.fixedtool-7 span{
+    line-height: 40px;
 }
-.two:hover{
-    background-color: rgb(253, 100, 45);
-    color: white;
-    transition: all .2s;
-    font-weight: bold;
+.fixedtool-8{
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-clip: padding-box;
 }
-.three:hover{
-    background-color: rgb(253, 100, 45);
-    color: white;
-    transition: all .2s;
-    font-weight: bold;
-}
-.four:hover{
-    background-color: rgb(253, 100, 45);
-    color: white;
-    transition: all .2s;
-    font-weight: bold;
-}
-.five:hover{
-    background-color: rgb(253, 100, 45);
-    color: white;
-    transition: all .2s;
-    font-weight: bold;
-}
-.six:hover{
-    background-color: rgb(253, 100, 45);
-    color: white;
-    transition: all .2s;
-    font-weight: bold;
-}
-.seven:hover{
-    background-color: rgb(253, 100, 45);
-    color: white;
-    transition: all .2s;
-    font-weight: bold;
-}
-.eight:hover{
-    background-color: rgb(253, 100, 45);
-    color: white;
-    transition: all .2s;
-    font-weight: bold;
-}
+
+
+
+
 
 
 
