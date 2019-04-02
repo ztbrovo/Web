@@ -1,5 +1,5 @@
 *{margin: 0;
-padding: 0;}/*一定要设置，不然后面会有错误。*/ 
+padding: 0;}/*一定要设置，不然后面会有错误。网站的审查元素有些是浏览器计算的computed。浏览器会根据继承关系 一点点的计算  并赋给每个元素*/ 
 body{
     color: #3C3C3C;
     -webkit-font-smoothing: antialiased;/*这个属性可以使页面上的字体抗锯齿,使用后字体看起来会更清晰舒服。none用于小像素的文本 | subpixel-antialiased浏览器默认的 | antialiased反锯齿*/
@@ -422,11 +422,11 @@ a{
     border-right: 1px solid #fff;
 }
 .fixedtool{
-    position: fixed;
+    position: fixed;/*fixed 是对浏览器定位的，静态图片给个right即可*/
     top: 110px;
     display: block;
     transition: none;
-    margin-right: -633px;
+    margin-right: -633px;/*也可以margin-left: 20px*/
     z-index: 4;
     right: 50%;
     width: 50px;
@@ -492,7 +492,7 @@ a{
     color: #F40;
 }
 .icon-fanhuidingbu-{
-    color: #999;
+    /*color: #999;/*浏览器计算的。css 优先级来说  直接对span 设置的。如果span未设置颜色，跟随父元素a的颜色。*/
     position: relative;
     line-height: 20px;
     display: block;

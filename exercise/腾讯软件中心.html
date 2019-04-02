@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动布局--横向两列</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif,"宋体";
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+    ul{
+        list-style: none;
+    }
+    h2{
+        line-height: 28px;
+        border-bottom: 1px solid yellow;
+        margin-top: 12px;
+        font-size: 18px;
+    }
+    h2 span{
+        float: right;
+    }
+    h2 span a{
+        font-size: 12px;
+        font-weight: normal;
+    }
+    #wrap{/*先对各个大盒子进行布局*/
+        width: 70%;
+        margin: 0 auto;
+    }
+    #header{
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    #mainbody{
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    #footer{
+        margin-top: 10px;
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    .logo{
+        width: 100%;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+    .logo h1{
+        float: left;
+        background: rgb(186, 186, 245);
+        height: 80px;
+        width: 210px;
+        cursor: pointer;
+        text-indent: -9999px;
+    }
+    .logo dl{
+        float: right;
+        margin-top: 10px;
+    }
+    .logo dt{
+        font-weight: bold;
+        color: black;
+        line-height: 26px;
+    }
+    .logo dd{
+        font-size: 15px;
+        line-height: 24px;
+        color: black;
+    }
+
+    #nav{
+        width: 100%;
+        margin-top: 2px;
+        background: rgb(151, 151, 247);
+        height: 36px;
+        overflow: hidden;
+    }
+    #nav ul{
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    #nav li{
+        float: left;/*字体排列成行*/
+        margin: 0 20px;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 34px;
+    }
+    #nav a{
+        color: black;
+    }
+    #nav a:hover{
+        text-decoration: none;
+    }
+    #nav li.current{
+        background: #fff 0 4px;
+        margin-top: 2px;
+        width: 88px;/*白色图片的大小*/
+        text-align: center;/*设置字体居中*/
+    }
+    #nav li.qq_lab{
+        background: blueviolet;
+        float: right;   
+    }
+    .content{
+        float: left;
+        width: 600px;
+    }
+    .img{
+        background: rgb(222, 222, 240);
+        width: 600px;
+        height: 200px;
+        margin-bottom: 15px;
+    }
+    .box{
+        margin-bottom: 15px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .sidebar{
+        float: right;
+        width: 300px;
+    }
+    .softwarelist{
+        width: 100%;
+        overflow: hidden;
+    }
+    .softwarelist li{
+        margin-bottom: 15px;
+        overflow: hidden;
+        width: 100%;
+    }
+    .softwarelist li dl{
+        float: left;
+        padding-left: 45px;
+    }
+    .softwarelist li span{
+        float: right;
+        font-size: 12px;
+        margin-top: 5px;
+        color: black;
+    }
+    .softwarelist li span a{
+        font-size:12px;
+        text-decoration:underline;
+    }
+    .softwarelist li span a:hover{
+        text-decoration:none;
+    }
+    .softwarelist li dt{
+        font-size:16px;
+        line-height:26px;
+        color:blue;
+    }
+    .softwarelist li dt a{
+        text-decoration:underline;
+        font-weight:bold;
+        margin-right:10px;
+    }
+    .softwerelist li dt a:hover{
+        text-decoration:none;
+    }
+    .softwarelist li dd{
+        font-size:16px;
+        font-family:"宋体";
+    }
+    /*少图片不完整，只练习布局等*/
+    .newslist{
+        font-family:"宋体";
+        font-size:12px;
+        width:100%;
+    }
+    .newslist li{
+        line-height:22px;
+    }
+    .downlist{
+        width:100%;
+        overflow:hidden;
+    }
+    .downlist li{
+        overflow:hidden;
+        line-height:26px;/*设置行高*/
+        padding-left:23px;
+        margin-bottom:6px;
+    }
+    .downlist li span{
+        float:right;/*使字体靠右*/
+        font-size:12px;
+        color:purple;
+    }
+    .downlist li span a{
+        text-decoration:underline;
+    }
+    .downlist li span a:hover{
+        text-decoration:none;
+    }
+    .link{
+        width:100%;
+    }
+    .link a{
+        width:100px;
+        float:left;/*宽度和浮动决定了排版*/
+        font-size:12px;
+        line-height:26px;/*决定了行高*/
+    }
+    #footer{
+        text-align:center;
+        background-color:white;
+        margin-top:10px;
+        padding:15px 0;
+        width:100%;
+        border:2px solid pink;
+    }
+    #footer li{
+        line-height:24px;
+        font-size:13px;
+        color:black;
+        /*list-style:none;去除列表前的圆点，最好设置在*选择器中，ul*/
+    }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo">
+                <h1><a href="#">腾讯软件中心</a></h1>
+                <dl>
+                    <dt>腾讯软件中心，腾讯精品软件展示平台</dt>
+                    <dd>我们会不断提升产品的性能和体验，为您提供最好用的软件！</dd>
+                </dl>
+            </div>
+            <div id="nav">
+                <ul><!--导航列表一般用ul li-->
+                  <li class="current"><a href="#">首页</a></li>
+                  <li><a href="#">pc产品大全</a></li>
+                  <li><a href="#">mac产品大全</a></li>
+                  <li><a href="#">企业产品大全</a></li>
+                  <li><a href="#">联系我们</a></li>
+                  <li class="qq_lab"><a href="#">QQ实验室</a></li>    
+                </ul>
+            </div>
+        </div>
+        <div id="mainbody">
+            <div class="content">
+                <div class="img"></div>
+                <div class="box">
+                    <h2>
+                        <a href="#">腾讯软件</a>
+                        <span><a href="#">更多>></a></span>
+                    </h2>
+                    <ul class="softwarelist">
+                        <li>
+                            <dl class="software1">
+                                <dt><a href="#">QQ 5.2</a>更新日期：2016-08-22</dt>
+                                <dd>免费的即时通讯平台，带来更多沟通乐趣</dd>
+                            </dl>
+                            <span><a href="#" class="download">下载</a>|<a href="#">官方网站</a></span>
+                        </li>
+                        <li>
+                             <dl class="software2">
+                                 <dt><a href="#">腾讯电脑管家</a>更新日期：2016-08-22</dt>
+                                 <dd>专业的免费杀毒软件，全面便捷管理电脑</dd>
+                             </dl>
+                             <span><a href="#" class="download">下载</a>|<a href="#">官方网站</a></span>    
+                         </li>
+                         <li>
+                             <dl class="software3">
+                                 <dt><a href="#">软件管理</a>更新日期：2016-08-22</dt>
+                                 <dd>下载软件，就用软件管理</dd>
+                             </dl>
+                             <span><a href="#" class="download">下载</a>|<a href="#">官方网站</a></span>    
+                         </li>
+                         <li>
+                             <dl class="software4">
+                                 <dt><a href="#">QQ音乐2016贺岁版</a>更新日期：2016-08-22</dt>
+                                 <dd>全新界面设计，视野更开阔，操作更简单</dd>
+                             </dl>
+                             <span><a href="#" class="download">下载</a>|<a href="#">官方网站</a></span>    
+                        </li>
+                        <li>
+                             <dl class="software5">
+                                 <dt><a href="#">QQ浏览器</a>更新日期：2016-08-22</dt>
+                                     <dd>全新设计，简约轻快，精巧易用</dd>
+                             </dl>
+                             <span><a href="#" class="download">下载</a>|<a href="#">官方网站</a></span>    
+                         </li>
+                         <li>
+                             <dl class="software6">
+                                 <dt><a href="#">QQ影像</a>更新日期：2016-08-22</dt>
+                                 <dd>管理、浏览、编辑、上传一站体验</dd>
+                             </dl>
+                            <span><a href="#" class="download">下载</a>|<a href="#">官方网站</a></span>    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="box">
+                    <h2>最新动态</h2>
+                      <ul class="newslist">
+                          <li>&middot; <a href="#">腾讯电脑管家8.0正式版发布</a></li>
+                          <li>&middot; <a href="#">腾讯游戏平台首推强加速、LOL助手永久免费</a></li>
+                          <li>&middot; <a href="#">微云2.0六大终端全新出击，超强收藏功能</a></li>
+                          <li>&middot; <a href="#">腾讯手机管家(PC版)2.0新版 只为用户更好体验</a></li>
+                          <li>&middot; <a href="#">QQ影音3.7发布，提升转码速度</a></li>
+                          <li>&middot; <a href="#">QQ2012 Beta2(Q+)：全新Q+，更快更便捷</a></li>
+                          <li>&middot; <a href="#">Foxmail 7发布新版本，支持繁、简、英多语言</a></li>
+                      </ul>
+                </div>
+                <div class="box">
+                    <h2><a href="#">更多推荐</a>
+                      <span><a href="#">更多>></a></span>
+                    </h2>
+                    <ul class="downlist">
+                      <li class="item-1"><a href="#">QQ旋风</a><span><a href="#" class="download">下载</a></span></li>
+                      <li class="item-2"><a href="#">腾讯视频播放器</a><span><a href="#" class="download">下载</a></span></li>
+                      <li class="item-3"><a href="#">QQ影音</a><span><a href="#" class="download">下载</a></span></li>
+                      <li class="item-4"><a href="#">小Q书桌</a><span><a href="#" class="download">下载</a></span></li>
+                      <li class="item-5"><a href="#">Foxmail</a><span><a href="#" class="download">下载</a></span></li>
+                      <li class="item-6"><a href="#">顽固木马克星</a><span><a href="#" class="download">下载</a></span></li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h2>合作伙伴</h2>
+                    <div class="link">
+                      <a href="#">腾讯软件管理</a>
+                      <a href="#">腾讯网下载</a>
+                      <a href="#">下载吧</a>
+                      <a href="#">IT168</a>
+                      <a href="#">东坡下载</a>
+                      <a href="#">完美下载</a>
+                      <a href="#">腾牛网</a>
+                      <a href="#">PC6下载站</a> 
+                      <a href="#">乡巴佬下载</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <ul>
+              <li>Copyright © 1998 - 2012 Tencent. All Rights Reserved.</li>
+              <li>腾讯公司 版权所有</li> 
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
