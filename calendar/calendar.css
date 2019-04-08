@@ -1,0 +1,50 @@
+#cldFrame {
+    position: relative;
+    width: 440px;
+    margin: 50px auto;
+}
+#cldBody {
+    margin: 10px;
+    position: absolute;
+    width: 420px;
+}
+#top {
+    position: relative;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+table {
+    background-color: aquamarine;
+}
+#week td {
+    font-size: 15px;
+}
+td {
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+#curDate {
+    font-size: 30px;
+}
+#left, #right {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+}
+#left {
+    left: 0;
+}
+#right {
+    right: 0;
+}
+#left:hover, #right:hover {/*多个元素悬浮这样用*/
+    background-color: gold;
+}
+#tbody{
+    background-color:rgb(230, 253, 246);
+}
+

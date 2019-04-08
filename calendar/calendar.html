@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历</title>
+    <link href="calendar.css" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+    
+    <div id="cldFrame">
+        <div id="cldBody">
+            <table>
+                <thead><!--thead、tfoot 以及 tbody 元素有能力对表格中的行进行分组。拥有一个标题行，一些带有数据的行，以及位于底部的一个总计行。
+                           <thead> 内部必须拥有 <tr> 标签！默认情况下这些元素不会影响到表格的布局。可以使用 CSS 使这些元素改变表格的外观。-->
+                    <tr><!--<tr> 标签定义 HTML 表格中的行。tr 元素包含一个或多个 th 或 td 元素。-->
+                        <td colspan="7"><!--colspan 和 rowspan 属性来实现内容横跨多个行或列。HTML 表格有两类单元格：表头单元 - 包含头部信息（由 th 元素创建）
+                                             标准单元 - 包含数据（由 td 元素创建）-->
+                            <div id="top">
+                                <span id="left">&lt;</span>
+                                <span id="curDate"></span>
+                                <span id="right">&gt;</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="week">
+                        <td>日</td>
+                        <td>一</td>
+                        <td>二</td>
+                        <td>三</td>
+                        <td>四</td>
+                        <td>五</td>
+                        <td>六</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <tr><td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td></tr>
+                    <tr><td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td></tr>
+                    <tr><td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td></tr>
+                    <tr><td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td></tr>
+                    <tr><td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td></tr>
+                    <tr><td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td></tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="calendar.js" type="text/javascript"></script><!--放到最后加载网页时不影响捕捉id-->
+</body>
+</html>
