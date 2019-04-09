@@ -67,7 +67,7 @@ function nextMonth(){
     }
     document.getElementById('curDate').innerHTML = YEAR +"年"+ nextMonth +"月";
     showCld(year, nextMonth, whatDay(year, nextMonth));
-}
+}//第一次点的下个月是针对当时的curDate来的，第二次再点时提取的curDate已经变成第一次点的日期了。
     function preMonth(){
         var topStr = document.getElementById("curDate").innerHTML;
         var pattern = /\d+/g;
