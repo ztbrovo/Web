@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clock</title>
+    <style>
+    div{
+        margin: 50px auto;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div>
+    <h3>电子时钟</h3>
+    <p id="clock"></p>
+    <p id="weekDay"></p>
+</div>
+<script type="text/javascript">
+function toTime(n){
+      if(n<10){
+          return '0'+n;
+      }
+      else{
+          return ''+n;
+      }
+}
+var attime
+function clock(){
+    var time=new Date();
+    var attime=toTime(time.getHours())+":"+toTime(time.getMinutes())+":"+toTime(time.getSeconds());
+    var clockElement=document.getElementById("clock");
+    clockElement.innerHTML=attime;
+}
+setInterval("clock()",1000);
+var date=new Date();
+var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+var num=date.getDay();
+var weekDayElement=document.getElementById("weekDay");
+weekDayElement.innerHTML=weekday[num];
+</script>
+</body>
+</html>

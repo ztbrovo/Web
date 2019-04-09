@@ -43,6 +43,7 @@ td {
 }
 #left:hover, #right:hover {/*多个元素悬浮这样用*/
     background-color: gold;
+    cursor: pointer;
 }
 #tbody{
     background-color:rgb(230, 253, 246);
