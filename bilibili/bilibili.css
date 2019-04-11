@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body, button, input, select, textarea{/*做完后记得回来删没有用到的元素*/
+    background-color: white;
+    font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+}
+.wrap{
+    margin: 0 auto;
+    width: 980px;
+    /*background-color: brown;
+    height: 800px;*/
+}
+
+.recommend{
+    padding-top: 30px;
+    padding-bottom: 40px;   
+}
+.recommend-box{
+    width: 440px;
+    height: 220px;
+    float: left;
+}
+.recommend-module{
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+.card{
+    float: left;
+    margin: 0 0 20px 20px;
+    width: 160px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #fff;
+}
+.rec-btn{
+    opacity: 0;/*设置元素的不透明级别。语法：opacity: value|inherit;value规定不透明度。从 0.0 （完全透明）到 1.0（完全不透明）。
+                                                            inherit应该从父元素继承 opacity 属性的值。*/
+    position: absolute;
+    background-color: rgba(0,0,0,.6);
+    background-image: url(https://s1.hdslb.com/bfs/static/jinkela/home/asserts/icons2.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    top: 50%;
+    margin-top: -8px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+}
+.pre{
+    left: 20px;
+    border-radius: 0 4px 4px 0;
+    padding: 13px 5px 13px 10px;
+    background-position: 6px -1211px;
+}
+.nex{
+    right: 0;
+    border-radius: 4px 0 0 4px;
+    padding: 13px 10px 13px 5px;
+    background-position: 25px -1262px;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.pic{
+    width: 160px;
+    height: 100px;
+}
+.card-info{
+    position: absolute;
+    left: 0;
+    top: 68px;
+    width: 150px;
+    height: 100%;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    padding: 10px 5px;
+    overflow: hidden;
+    background: #000;
+    background: linear-gradient(transparent,rgba(0,0,0,.1) 20%,rgba(0,0,0,.2) 35%,rgba(0,0,0,.6) 65%,rgba(0,0,0,.9));
+}/*linear-gradient（线性渐变）和radial-gradient（径性渐变）,linear-gradient线性渐变呈现线性变化，相当于是直线变化，比如充左上角到右下角的变化，或者从上到下，而radial-gradient径性渐变呈现径性变化，这便是圆圈渐变效果。
+   从透明开始渐变。*/
+.card-info .title{
+    color: #fff;
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    word-break: break-all;/*允许任意非CJK(Chinese/Japanese/Korean)文本间的单词断行。比较整齐好看*/
+    word-wrap: break-word;/*一行单词中实在没有其他靠谱的换行点的时候换行。会有一块一块的残缺*/
+}
+.card-info .author, .card-info .play {
+    opacity: 0;
+    color: #99a2aa;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.watch-later{
+    display: none;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 6px;
+    bottom: 4px;
+    cursor: pointer;
+    /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAABT0lEQ…HyYYxBKXU9+p5Grybg4m1Hk9Bar4Ee4JC0JWeixOhprdffE/1yRW/TLMYAAAAASUVORK5CYII=);
+}图片无效，一会儿改。*/
+
+
+
