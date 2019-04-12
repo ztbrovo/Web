@@ -73,6 +73,7 @@ a{
     height: 100px;
 }
 .card-info{
+    pointer-events: none;/*这个是为了解决onmouseover,onmouseout使用时界面抖动的问题*/
     position: absolute;
     left: 0;
     top: 68px;
@@ -96,11 +97,13 @@ a{
     word-wrap: break-word;/*一行单词中实在没有其他靠谱的换行点的时候换行。会有一块一块的残缺*/
 }
 .card-info .author, .card-info .play {
+    pointer-events: none;
     opacity: 0;
     color: #99a2aa;
     height: 20px;
     line-height: 20px;
     overflow: hidden;
+    transition: all .6s;
 }
 .watch-later{
     display: none;
@@ -110,8 +113,8 @@ a{
     right: 6px;
     bottom: 4px;
     cursor: pointer;
-    /*background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAABT0lEQ…HyYYxBKXU9+p5Grybg4m1Hk9Bar4Ee4JC0JWeixOhprdffE/1yRW/TLMYAAAAASUVORK5CYII=);
-}图片无效，一会儿改。*/
+    background-image: url(images/watch-later.jpg);
+}
 
 
 
